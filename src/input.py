@@ -3,6 +3,16 @@
 # Author: Jing Huang; Date: Apirl 14, 2016
 # 
 
+import sys
+import datetime
+
+def exception_message(filename):
+    """ message shown in terminal in case keywords were not retrieved correctly. """
+    print ("ERROR: INVALID/INSUFFICIENT KEYWORDS in " + filename )
+    print (" ")
+    print (" ----- ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + " -----")
+    sys.exit()
+
 def determine_type(filename):
     """ determine type of calculation """
     with open(filename,'r') as f_obj:
@@ -12,8 +22,10 @@ def determine_type(filename):
         line_content = line.split(" ")
         if line_content[0] == "TYPE":
             TYPE = str(line_content[2])
-
-    return TYPE
+    try:
+        return TYPE
+    except:
+        exception_message(filename)
 
 def read_input_cpc(filename):
     """ read parameters for cpc calculation """
@@ -46,8 +58,10 @@ def read_input_cpc(filename):
             POINT2_Y = float(line_content[2])
         if line_content[0] == "POINT2_Z":
             POINT2_Z = float(line_content[2])
-
-    return POINT1_X,POINT1_Y,POINT1_Z,POINT2_X,POINT2_Y,POINT2_Z,R,N,DIS,FIELD,NAME,OUTFORMAT
+    try:
+        return POINT1_X,POINT1_Y,POINT1_Z,POINT2_X,POINT2_Y,POINT2_Z,R,N,DIS,FIELD,NAME,OUTFORMAT
+    except:
+        exception_message(filename)
 
 def read_input_sl(filename):
     """ read parameters for SL calculation. """
@@ -83,8 +97,10 @@ def read_input_sl(filename):
             YP = float(line_content[2])
         if line_content[0] == "ZP":
             ZP = float(line_content[2])
-
-    return RADIUS,N,STEP,CHIRALITY,NAME,CHARGETYPE,FATOM,SEQUENCE,CHARGE,XP,YP,ZP
+    try:
+        return RADIUS,N,STEP,CHIRALITY,NAME,CHARGETYPE,FATOM,SEQUENCE,CHARGE,XP,YP,ZP
+    except:
+        exception_message(filename)
 
 def read_input_quantification(filename):
     """ read parameters for EF quantification """
@@ -106,7 +122,10 @@ def read_input_quantification(filename):
         if line_content[0] == "DIRECTION":
             DIRECTION = line_content[2]
 
-    return UNIT, FILE, NAME, CHARGE_SELECT, CHARGE_SEQ, DIRECTION
+    try:
+        return UNIT, FILE, NAME, CHARGE_SELECT, CHARGE_SEQ, DIRECTION
+    except:
+        exception_message(filename)
 
 def read_input_quantification_manual(filename):
     """ in case DIRECTION = MANUAL was selected, the direction vector parameters have to be read """
@@ -133,8 +152,10 @@ def read_input_quantification_manual(filename):
             YP = float(line_content[2])
         if line_content[0] == "ZP":
             ZP = float(line_content[2])
-
-    return V1X, V1Y, V1Z, V2X, V2Y, V2Z, XP, YP, ZP
+    try:
+        return V1X, V1Y, V1Z, V2X, V2Y, V2Z, XP, YP, ZP
+    except:
+        exception_message(filename)
 
 def read_input_quantification_select(filename):
     """ in case DIRECTION = SELECT was selected, the coordination file and atom numbers determining the direction vector parameters have to be read """
@@ -152,7 +173,10 @@ def read_input_quantification_select(filename):
         if line_content[0] == "ATOM_CENTER":
             ATOM_CENTER = int(line_content[2])
 
-    return DIRECTION_FILE,ATOM1,ATOM2,ATOM_CENTER
+    try:
+        return DIRECTION_FILE,ATOM1,ATOM2,ATOM_CENTER
+    except:
+        exception_message(filename)
 
 def read_input_pdb(filename):
     """ read the additional parameters in case the starting point for EF quantification is a .pdb file """
@@ -170,7 +194,10 @@ def read_input_pdb(filename):
         if line_content[0] == "C_TERMINAL":
             C_TERMINAL = [int(line_content[2])]
 
-    return NAME_CHARGE_DISTRIBUTION,FORCE,N_TERMINAL,C_TERMINAL
+    try:
+        return NAME_CHARGE_DISTRIBUTION,FORCE,N_TERMINAL,C_TERMINAL
+    except:
+        exception_message(filename)
 
 def read_input_charmm(filename):
     """ read the additional parameters in case the selected force field for the charge distribution to be extracted from the .pdb file is CHARMM """
@@ -194,5 +221,7 @@ def read_input_charmm(filename):
                 DISU = line_content[2].split(",")
             except:
                 DISU = []
-
-    return ASPP,GLUP,DISU
+    try:
+        return ASPP,GLUP,DISU
+    except:
+        exception_message(filename)

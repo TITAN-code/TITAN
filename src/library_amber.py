@@ -1,6 +1,21 @@
 #!/usr/bin/python
-# put_pdb_chrg_nonstand_amber.py
-# Author: Jing Huang; Date: July 24, 2016
+
+import sys
+import datetime
+
+def library_warning_message():
+    """ Message shown in the terminal in case the assignment of a point charge to an atom was not succesfull """
+    print ("AN ERROR HAS OCCURED!")
+    print (" ")
+    print ("PLEASE CONFIRM THE CORRECT ASSIGNMENT OF N_TERMINAL & C_TERMINAL IN THE INPUT FILE")
+    print (" ")
+    print ("OTHERWISE:")
+    print (" ")
+    print ("THE ERROR IS MOST LIKELY DUE TO THE PRESENCE OF NON-STANDARD RESIDUES IN THE .pdb-FILE.")
+    print ("CONSIDER COMPILING AN ALTERNATIVE AMBER-LIBRARY WITH THE NON-STANDARD RESIDUES INCLUDED.")
+    print (" ")
+    print (" ----- ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + " -----")
+    sys.exit()
 
 def amber_charge_resid(ATOM_NAME,RES_NAME):
  if (RES_NAME == "ALA"): 
@@ -963,7 +978,10 @@ def amber_charge_resid(ATOM_NAME,RES_NAME):
      print ("THE ATOM TYPE %s CANNOT BE FOUND IN THE RESIDUE %s." %(ATOM_NAME,RES_NAME)) 
  else:
    print ("THE RESIDUE %s IS WRONG" %(RES_NAME)) 
- return charge
+ try:
+   return charge
+ except:
+   library_warning_message()
 
 def N_terminal_charge(ATOM_NAME,RES_NAME):
  if (RES_NAME == "ACE"): 
@@ -1882,7 +1900,10 @@ def N_terminal_charge(ATOM_NAME,RES_NAME):
      print ("THE ATOM TYPE %s CANNOT BE FOUND IN THE RESIDUE %s." %(ATOM_NAME,RES_NAME)) 
  else:
    print ("THE RESIDUE %s IS WRONG" %(RES_NAME)) 
- return charge
+ try:
+    return charge
+ except:
+    library_warning_message()
 
 def C_terminal_charge(ATOM_NAME,RES_NAME):
  if (RES_NAME == "CALA"): 
@@ -2764,5 +2785,8 @@ def C_terminal_charge(ATOM_NAME,RES_NAME):
      print ("THE ATOM TYPE %s CANNOT BE FOUND IN THE RESIDUE %s." %(ATOM_NAME,RES_NAME)) 
  else:
    print ("THE RESIDUE %s IS WRONG" %(RES_NAME)) 
- return charge
+ try:
+  return charge
+ except:
+    library_warning_message()
 

@@ -71,7 +71,7 @@ ATOM2 = 1
 # THE VALUE OF THE EF IS CALCULATED AT (XP,YP,ZP).
 # THE NUMBER OF THE ATOM DETERMINING THIS POINT SELECTED FROM DIRECTION_FILE (ATOM_CENTER)
 
-ATOM_CENTER = 2
+ATOM_CENTER = 1
 
 ___________________________________________________________________________________
 # THE FOLLOWING PARAMETERS ARE ONLY RELEVANT IN CASE FILE = “PDB”
@@ -79,6 +79,25 @@ ________________________________________________________________________________
 # NAME OF THE CHARGE DISTRIBUTION GENERATED (NAME_CHARGE_DISTRIBUTION.txt BY DEFAULT).
 
 NAME_CHARGE_DISTRIBUTION = opt
+
+#  ATOM_SELECT   |                     NOTE
+#-----------------------------------------------------------------------
+#      "ALL"        | ALL THE ATOMS IN THE PDB-FILE
+#                   | ARE SELECTED FOR THE ELECTRIC FIELD CALCULATION.
+#-----------------------------------------------------------------------
+#      "PART"       | A PART OF THE ATOMS IN THE PDB-FILE ARE SELECTED.
+#                   | (IN THIS CASE, THE “ATOM_SEQ" KEYWORD NEEDS TO BE DEFINED)
+#-----------------------------------------------------------------------
+
+ATOM_SELECT = ALL
+
+# THE “ATOM_SEQ" KEYWORD IS USED TO SELECT THE ATOMS FOR ATOM_SELECT = "PART"
+# IT IS NOT NECESSARY TO SET THE “ATOM_SEQ" KEYWORD WHEN ATOM_SELECT = "ALL"
+# FOR EXAMPLE, ”ATOM_SEQ = R(3,10)+P(20)+P(3000)+R(400,403)+P(50)" MEANS: 
+# THE ATOMS FROM NO. 3 TO NO. 10, THE ATOM NO. 20, THE ATOM NO. 3000, THE ATOM FROM 
+# NO. 400 TO NO. 403 AND ATOM NO. 50 ARE SELECTED FOR THE EF CALCULATIONS.
+
+ATOM_SEQ = R(5,10)+P(600)
 
 # FORCE FIELD OF CHOICE (AMBER/CHARMM)
 FORCE = CHARMM

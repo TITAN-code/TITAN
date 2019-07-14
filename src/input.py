@@ -1,7 +1,4 @@
 #!/usr/bin/python
-# circle_plate_charge.py
-# Author: Jing Huang; Date: Apirl 14, 2016
-# 
 
 import sys
 import datetime
@@ -122,6 +119,8 @@ def read_input_quantification(filename):
         if line_content[0] == "DIRECTION":
             DIRECTION = line_content[2]
 
+    if CHARGE_SELECT == "ALL":
+        CHARGE_SEQ = " "
     try:
         return UNIT, FILE, NAME, CHARGE_SELECT, CHARGE_SEQ, DIRECTION
     except:
@@ -187,6 +186,10 @@ def read_input_pdb(filename):
         line_content = line.split(" ")
         if line_content[0] == "NAME_CHARGE_DISTRIBUTION":
             NAME_CHARGE_DISTRIBUTION = str(line_content[2])
+        if line_content[0] == "ATOM_SELECT":
+            ATOM_SELECT = str(line_content[2])
+        if line_content[0] == "ATOM_SEQ":
+            ATOM_SEQ = line_content[2]
         if line_content[0] == "FORCE":
             FORCE = str(line_content[2])
         if line_content[0] == "N_TERMINAL":
@@ -194,8 +197,10 @@ def read_input_pdb(filename):
         if line_content[0] == "C_TERMINAL":
             C_TERMINAL = [int(line_content[2])]
 
+    if ATOM_SELECT == "ALL":
+        ATOM_SEQ = " "
     try:
-        return NAME_CHARGE_DISTRIBUTION,FORCE,N_TERMINAL,C_TERMINAL
+        return NAME_CHARGE_DISTRIBUTION,ATOM_SELECT,ATOM_SEQ,FORCE,N_TERMINAL,C_TERMINAL
     except:
         exception_message(filename)
 

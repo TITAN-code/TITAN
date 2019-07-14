@@ -1,6 +1,4 @@
 #!/usr/bin/python
-# circle_plate_charge.py
-# Author: Jing Huang; Date: Apirl 14, 2016
 
 import math
 

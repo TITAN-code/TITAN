@@ -1,5 +1,4 @@
 #!/usr/bin/python
-#
 
 def amberlib_cpc(NAME,CHARGE):
   """ generate *.lib for amber output """

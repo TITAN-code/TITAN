@@ -1,8 +1,5 @@
 #!/usr/bin/python
-# circle_plate_charge.py
-# Author: Jing Huang; Date: Apirl 14, 2016
-# 
-# 
+
 import math,vector,output,charge_type
 import header as header
 #
@@ -22,7 +19,11 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   #
   # OUTPUT THE PDB COORDINATE TO opt.pdb
   #
-  f1 = open(NAME+".pdb", "w")
+  if FORMAT == "GAUSSIAN":
+    f1 = open(NAME+".txt","w")
+    coord = []
+  else:
+    f1 = open(NAME+".pdb", "w")
   #
   # vector of FE=O
   #
@@ -42,7 +43,9 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   if FORMAT == "CHARMM":
     print >> f1, ("ATOM %6d  HPC CHRP %4d    %8.3f%8.3f%8.3f  1.00  0.00      SCPC" %(COUNT,COUNT,X0,Y0,Z0)) 
   elif FORMAT == "AMBER":
-    print >> f1, ("ATOM %6d  HPC CRP  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X0,Y0,Z0)) 
+    print >> f1, ("ATOM %6d  HPC CRP  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X0,Y0,Z0))
+  elif FORMAT == "GAUSSIAN":
+    coord.append([X0,Y0,Z0])
   else:
     print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT"%(FORMAT))
     os.exit()
@@ -120,7 +123,9 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
        if FORMAT == "CHARMM":
          print>>f1, ("ATOM %6d  HPC CHRP %4d    %8.3f%8.3f%8.3f  1.00  0.00      SCPC" %(COUNT,COUNT,X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1])) 
        elif FORMAT == "AMBER":
-         print>>f1, ("ATOM %6d  HPC CRP  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1])) 
+         print>>f1, ("ATOM %6d  HPC CRP  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1]))
+       elif FORMAT == "GAUSSIAN":
+            coord.append([X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1]])
        else:
          print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" %(FORMAT))
          os.exit()
@@ -130,7 +135,7 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   # EEF CALCULATION ON FE ATOM
   #
        EEF1 = vector.eef_oriented(X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1],FEX,FEY,FEZ,INITIALCHARGE,DIS)
-       EEF2 = EEF2 +  EEF1
+       EEF2 = EEF2 + EEF1
   #
        j = j + 1
      i = i + 1
@@ -144,7 +149,7 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   #
   #
   #******************************************************************
-  # START CREATING THE UNIFORM CIRCULAR PLATES WITH NEGITIVE CHARGES
+  # START CREATING THE UNIFORM CIRCULAR PLATES WITH NEGATIVE CHARGES
   #******************************************************************
   # COORDINATE OF (X0,Y0,Z0)
   #
@@ -154,7 +159,9 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   if FORMAT == "CHARMM":
     print >> f1, ("ATOM %6d  HNC CHRN %4d    %8.3f%8.3f%8.3f  1.00  0.00      SCPC" %(COUNT,COUNT,X0,Y0,Z0)) 
   elif FORMAT == "AMBER":
-    print >> f1, ("ATOM %6d  HNC CRN  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X0,Y0,Z0)) 
+    print >> f1, ("ATOM %6d  HNC CRN  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X0,Y0,Z0))
+  elif FORMAT == "GAUSSIAN":
+    coord.append([X0,Y0,Z0])
   else:
     print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" %(FORMAT))
     os.exit()
@@ -235,7 +242,9 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
        if FORMAT == "CHARMM":
          print >> f1, ("ATOM %6d  HNC CHRN %4d    %8.3f%8.3f%8.3f  1.00  0.00      SCPC" %(COUNT,COUNT,X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1])) 
        elif FORMAT == "AMBER":
-         print >> f1, ("ATOM %6d  HNC CRN  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1])) 
+         print >> f1, ("ATOM %6d  HNC CRN  %4d    %8.3f%8.3f%8.3f  1.00  0.00" %(COUNT,COUNT,X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1]))
+       elif FORMAT == "GAUSSIAN":
+         coord.append([X[i-1][j-1],Y[i-1][j-1],Z[i-1][j-1]])
        else:
          print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" %(FORMAT))
          os.exit()
@@ -254,14 +263,14 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   #
   A_N = vector.angle(X0,Y0,Z0,FEX,FEY,FEZ,OX,OY,OZ)
   #******************************************************************
-  # FINISH CREATING THE UNIFORM CIRCULAR PLATES WITH NEGITIVE CHARGES
+  # FINISH CREATING THE UNIFORM CIRCULAR PLATES WITH NEGATIVE CHARGES
   #******************************************************************
   #
   # CALCULATE THE NUMBER OF CHARGES IN TWO PLATES
   #
   TOTAL = COUNT - 1
   #
-  # CALCULATE THE RADIO OF CHARGES IN EACH PLATES
+  # CALCULATE THE RADIUS OF CHARGES IN EACH PLATES
   #
   RADIUS = float(R)*float(N)
   #
@@ -269,11 +278,20 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   COUNT = COUNT + 1
 # print >> f1, ("ATOM %6d   O  FEOA %4d     %7.3f %7.3f %7.3f  1.00  0.00      FEOA" %(COUNT,2,OX,OY,OZ)) # Print the (x,y,z) of the center of a circ
   #
-  print >> f1, ("END")
-  f1.close()
+  if FORMAT == "AMBER":
+    print >> f1, ("END")
+  if FORMAT == "CHARMM":
+    print >> f1, ("END")
   #
   CHARGE = FIELD/EEF2
-  # 
+  #
+  if FORMAT == "GAUSSIAN":
+    for i in range(len(coord)/2):
+      print >> f1, ("%10.6f     %10.6f      %10.6f       %10.6f" %(coord[i][0],coord[i][1],coord[i][2],CHARGE))
+    for i in range(len(coord)/2):
+        print >> f1, ("%10.6f     %10.6f      %10.6f       %10.6f" %(coord[len(coord)/2+i][0],coord[len(coord)/2+i][1],coord[len(coord)/2+i][2], -CHARGE))
+
+  f1.close()
   # SUMMARY AND OUTPUT
   #
   f2 = open(NAME+".info", "w")
@@ -311,7 +329,7 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   print >> f2, ("------------------------------------------------------------------ ")
   print >> f2, (" ")
   print >> f2, (" ")
-  print >> f2, (" IN ORDER FOR THE FIELD OF %10.6f A.U. SHOULD BE %8.4f e."%(FIELD,CHARGE))
+  print >> f2, (" IN ORDER FOR THE FIELD TO BE %10.6f A.U., THE CHARGE SHOULD BE %8.4f e."%(FIELD,CHARGE))
   #print >> f2, (" FIELD OF %10.6f e." %(EEF2))
   print >> f2, (" ")
   print >> f2, (" ")
@@ -369,6 +387,8 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
     print >> f2, (" THE PDB FILE OF EEF IS \"%.10s_amber.pdb\"."%(NAME))
     print >> f2, (" ")
     print >> f2, (" ")
+  elif FORMAT == "GAUSSIAN":
+    pass
   else:
     print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" %(FORMAT))
     os.exit()
@@ -385,7 +405,12 @@ def circular_plates_charge(FEX,FEY,FEZ,OX,OY,OZ,R,N,DIS,FIELD,NAME,FORMAT):
   print >> f2, (" radius")
   print >> f2, (" ")
   print >> f2, (" ")
-  print >> f2, (" THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS  %10s.pdb" %(NAME))
+  if FORMAT == "AMBER":
+    print >> f2, (" THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS  %10s.pdb" %(NAME))
+  if FORMAT == "CHARMM":
+    print >> f2, (" THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS  %10s.pdb" %(NAME))
+  if FORMAT == "GAUSSIAN":
+    print >> f2, (" THE TXT FILE OF TWO PARALLEL CIRCULAR PLATES IS  %10s.txt" %(NAME))
   print >> f2, (" ")
   print >> f2, (" ")
   print >> f2, (" THE ELECTRIC FIELD HAS BEEN SUCCESFULLY GENERATED. ")
@@ -425,7 +450,7 @@ def spiral_lines_charge(NAME,CHARGETYPE,SEQUENCE,FATOM,CHARGE,RADII,STEP,N,CHIRA
   pdb = open(NAME+".pdb", "w")
   guass = open(NAME+".txt", "w")
 #
-# THE MUNBERS OF ATOMS ACCORDING TO THE SEQUENCE
+# THE NUMBERS OF ATOMS ACCORDING TO THE SEQUENCE
 #
   if (CHARGETYPE == "DNA"):
     FATOM = 7

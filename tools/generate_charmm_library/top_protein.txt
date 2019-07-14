@@ -1,0 +1,583 @@
+RESI ALA          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT3    -0.27
+ATOM HB1  HA3     0.09
+ATOM HB2  HA3     0.09
+ATOM HB3  HA3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI ARG          1.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CT2    -0.18
+ATOM HG1  HA2     0.09
+ATOM HG2  HA2     0.09
+ATOM CD   CT2     0.20
+ATOM HD1  HA2     0.09
+ATOM HD2  HA2     0.09
+ATOM NE   NC2    -0.70
+ATOM HE   HC      0.44
+ATOM CZ   C       0.64
+ATOM NH1  NC2    -0.80
+ATOM HH11 HC      0.46
+ATOM HH12 HC      0.46
+ATOM NH2  NC2    -0.80
+ATOM HH21 HC      0.46
+ATOM HH22 HC      0.46
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI ASN          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CC      0.55
+ATOM OD1  O      -0.55
+ATOM ND2  NH2    -0.62
+ATOM HD21 H       0.32
+ATOM HD22 H       0.30
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI ASP         -1.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2A   -0.28
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CC      0.62
+ATOM OD1  OC     -0.76
+ATOM OD2  OC     -0.76
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI CYS          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.11
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM SG   S      -0.23
+ATOM HG1  HS      0.16
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI GLN          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CT2    -0.18
+ATOM HG1  HA2     0.09
+ATOM HG2  HA2     0.09
+ATOM CD   CC      0.55
+ATOM OE1  O      -0.55
+ATOM NE2  NH2    -0.62
+ATOM HE21 H       0.32
+ATOM HE22 H       0.30
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI GLU         -1.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2A   -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CT2    -0.28
+ATOM HG1  HA2     0.09
+ATOM HG2  HA2     0.09
+ATOM CD   CC      0.62
+ATOM OE1  OC     -0.76
+ATOM OE2  OC     -0.76
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI GLY          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT2    -0.02
+ATOM HA1  HB2     0.09
+ATOM HA2  HB2     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI HSD          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.09
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM ND1  NR1    -0.36
+ATOM HD1  H       0.32
+ATOM CG   CPH1   -0.05
+ATOM CE1  CPH2    0.25
+ATOM HE1  HR1     0.13
+ATOM NE2  NR2    -0.70
+ATOM CD2  CPH1    0.22
+ATOM HD2  HR3     0.10
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI HSE          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.08
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM ND1  NR2    -0.70
+ATOM CG   CPH1    0.22
+ATOM CE1  CPH2    0.25
+ATOM HE1  HR1     0.13
+ATOM NE2  NR1    -0.36
+ATOM HE2  H       0.32
+ATOM CD2  CPH1   -0.05
+ATOM HD2  HR3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI HSP          1.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2A   -0.05
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CD2  CPH1    0.19
+ATOM HD2  HR1     0.13
+ATOM CG   CPH1    0.19
+ATOM NE2  NR3    -0.51
+ATOM HE2  H       0.44
+ATOM ND1  NR3    -0.51
+ATOM HD1  H       0.44
+ATOM CE1  CPH2    0.32
+ATOM HE1  HR2     0.18
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI ILE          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT1    -0.09
+ATOM HB   HA1     0.09
+ATOM CG2  CT3    -0.27
+ATOM HG21 HA3     0.09
+ATOM HG22 HA3     0.09
+ATOM HG23 HA3     0.09
+ATOM CG1  CT2    -0.18
+ATOM HG11 HA2     0.09
+ATOM HG12 HA2     0.09
+ATOM CD   CT3    -0.27
+ATOM HD1  HA3     0.09
+ATOM HD2  HA3     0.09
+ATOM HD3  HA3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI LEU          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CT1    -0.09
+ATOM HG   HA1     0.09
+ATOM CD1  CT3    -0.27
+ATOM HD11 HA3     0.09
+ATOM HD12 HA3     0.09
+ATOM HD13 HA3     0.09
+ATOM CD2  CT3    -0.27
+ATOM HD21 HA3     0.09
+ATOM HD22 HA3     0.09
+ATOM HD23 HA3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI LYS          1.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CT2    -0.18
+ATOM HG1  HA2     0.09
+ATOM HG2  HA2     0.09
+ATOM CD   CT2    -0.18
+ATOM HD1  HA2     0.09
+ATOM HD2  HA2     0.09
+ATOM CE   CT2     0.21
+ATOM HE1  HA2     0.05
+ATOM HE2  HA2     0.05
+ATOM NZ   NH3    -0.30
+ATOM HZ1  HC      0.33
+ATOM HZ2  HC      0.33
+ATOM HZ3  HC      0.33
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI MET          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CT2    -0.14
+ATOM HG1  HA2     0.09
+ATOM HG2  HA2     0.09
+ATOM SD   S      -0.09
+ATOM CE   CT3    -0.22
+ATOM HE1  HA3     0.09
+ATOM HE2  HA3     0.09
+ATOM HE3  HA3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI PHE          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CA      0.00
+ATOM CD1  CA     -0.115
+ATOM HD1  HP      0.115
+ATOM CE1  CA     -0.115
+ATOM HE1  HP      0.115
+ATOM CZ   CA     -0.115
+ATOM HZ   HP      0.115
+ATOM CD2  CA     -0.115
+ATOM HD2  HP      0.115
+ATOM CE2  CA     -0.115
+ATOM HE2  HP      0.115
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI PRO          0.00
+ATOM N    N      -0.29
+ATOM CD   CP3     0.00
+ATOM HD1  HA2     0.09
+ATOM HD2  HA2     0.09
+ATOM CA   CP1     0.02
+ATOM HA   HB1     0.09
+ATOM CB   CP2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CP2    -0.18
+ATOM HG1  HA2     0.09
+ATOM HG2  HA2     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI SER          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2     0.05
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM OG   OH1    -0.66
+ATOM HG1  H       0.43
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI THR          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT1     0.14
+ATOM HB   HA1     0.09
+ATOM OG1  OH1    -0.66
+ATOM HG1  H       0.43
+ATOM CG2  CT3    -0.27
+ATOM HG21 HA3     0.09
+ATOM HG22 HA3     0.09
+ATOM HG23 HA3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI TRP          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CY     -0.03
+ATOM CD1  CA     -0.15
+ATOM HD1  HP      0.22
+ATOM NE1  NY     -0.51
+ATOM HE1  H       0.37
+ATOM CE2  CPT     0.24
+ATOM CD2  CPT     0.11
+ATOM CE3  CAI    -0.25
+ATOM HE3  HP      0.17
+ATOM CZ3  CA     -0.20
+ATOM HZ3  HP      0.14
+ATOM CZ2  CAI    -0.27
+ATOM HZ2  HP      0.16
+ATOM CH2  CA     -0.14
+ATOM HH2  HP      0.14
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI TYR          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA2     0.09
+ATOM HB2  HA2     0.09
+ATOM CG   CA      0.00
+ATOM CD1  CA     -0.115
+ATOM HD1  HP      0.115
+ATOM CE1  CA     -0.115
+ATOM HE1  HP      0.115
+ATOM CZ   CA      0.11
+ATOM OH   OH1    -0.54
+ATOM HH   H       0.43
+ATOM CD2  CA     -0.115
+ATOM HD2  HP      0.115
+ATOM CE2  CA     -0.115
+ATOM HE2  HP      0.115
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI VAL          0.00
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB1     0.09
+ATOM CB   CT1    -0.09
+ATOM HB   HA1     0.09
+ATOM CG1  CT3    -0.27
+ATOM HG11 HA3     0.09
+ATOM HG12 HA3     0.09
+ATOM HG13 HA3     0.09
+ATOM CG2  CT3    -0.27
+ATOM HG21 HA3     0.09
+ATOM HG22 HA3     0.09
+ATOM HG23 HA3     0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI TIP3 
+ATOM OH2  OT     -0.834
+ATOM H1   HT      0.417
+ATOM H2   HT      0.417
+RESI ASPP
+ATOM CB   CT2    -0.21
+ATOM HB1  HA      0.09
+ATOM HB2  HA      0.09
+ATOM CG   CD      0.75
+ATOM OD1  OB     -0.55
+ATOM OD2  OH1    -0.61
+ATOM HD2  H       0.44
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB      0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI GLUP
+ATOM CG   CT2    -0.21
+ATOM HG1  HA      0.09
+ATOM HG2  HA      0.09
+ATOM CD   CD      0.75
+ATOM OE1  OB     -0.55
+ATOM OE2  OH1    -0.61
+ATOM HE2  H       0.44
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB      0.09
+ATOM CB   CT2    -0.18
+ATOM HB1  HA      0.09
+ATOM HB2  HA      0.09
+ATOM C    C       0.51
+ATOM O    O      -0.51
+RESI DISU
+ATOM N    NH1    -0.47
+ATOM HN   H       0.31
+ATOM CA   CT1     0.07
+ATOM HA   HB      0.09
+ATOM CB   CT2    -0.10
+ATOM HB1  HA      0.09
+ATOM HB2  HA      0.09
+ATOM SG   S      -0.08
+ATOM C    C       0.51
+ATOM O    O      -0.51 
+RESI TAUR         +0.000 ! type from CHARMM
+ATOM   C1  CT2     +0.160  ! type from CHARMM
+ATOM   H1   HB     +0.040  ! type from CHARMM
+ATOM   H2   HB     +0.040  ! type from CHARMM
+ATOM   C2  CT2     -0.350  ! type from CHARMM
+ATOM   H3   HB     +0.090  ! type from CHARMM
+ATOM   H4   HB     +0.090  ! type from CHARMM
+ATOM   N1  NH2     -0.340  ! type from CHARMM
+ATOM   H5   HC     +0.320  ! type from CHARMM
+ATOM   H6   HC     +0.320  ! type from CHARMM
+ATOM   H7   HC     +0.320  ! type from CHARMM
+ATOM   S1   SO     +1.320  ! type from CHARMM
+ATOM   O1  OSS     -0.670  ! type from CHARMM
+ATOM   O2  OSS     -0.670  ! type from CHARMM
+ATOM   O3  OSS     -0.670  ! type from CHARMM
+RESI HEMI        -2.00 ! 6-liganded planar heme
+ATOM OX   OM     -0.32 
+ATOM FE   FE      0.56 ! 0.24   O2A   O1A             O2D  O1D
+ATOM NA   NPH    -0.18 !         \\ //                 \\ //
+ATOM NB   NPH    -0.18 !          CGA                   CGD
+ATOM NC   NPH    -0.18 !           |                     |
+ATOM ND   NPH    -0.18 !    HBA1--CBA--HBA2  HA   HBD1--CBD--HBD2
+ATOM C1A  CPA     0.12 !           |          |          |
+ATOM C2A  CPB    -0.06 !    HAA1--CAA-HAA2  _CHA_ HAD1--CAD--HAD2
+ATOM C3A  CPB    -0.06 !           |       /     \       |
+ATOM C4A  CPA     0.12 !          C2A---C1A       C4D---C3D
+ATOM C1B  CPA     0.12 !           |     |         |     |
+ATOM C2B  CPB    -0.06 !HMA1\      |     |         |     |      /HMD1
+ATOM C3B  CPB    -0.06 !HMA2-CMA--C3A    NA       ND    C2D--CMD-HMD2
+ATOM C4B  CPA     0.12 !HMA3/       \   / \       / \   /       \HMD3
+ATOM C1C  CPA     0.12 !             C4A   \     /   C1D
+ATOM C2C  CPB    -0.06 !            /       \   /       \
+ATOM C3C  CPB    -0.06 !      HB--CHB        FE         CHD--HD
+ATOM C4C  CPA     0.12 !            \       /   \       /
+ATOM C1D  CPA     0.12 !             C1B   /     \   C4C        HAC
+ATOM C2D  CPB    -0.06 !HMB1\       /   \ /       \ /   \       /
+ATOM C3D  CPB    -0.06 !HMB2-CMB--C2B    NB       NC    C3C--CAC
+ATOM C4D  CPA     0.12 !HMB3/      |     |         |     |     \\  /HBC1                !           |     |         |     |      CBC
+ATOM CHA  CPM    -0.10 !          C3B---C4B       C1C---C2C        \HBC2
+ATOM HA   HA      0.10 !           |       \_CHC_/       |                !          CAB         |         CMC--HMC3
+ATOM CHB  CPM    -0.10 !         //  \        HC       /  | 
+ATOM HB   HA      0.10 !        CBB  HAB           HMC1  HMC2               !       /   \
+ATOM CHC  CPM    -0.10 !    HBB1  HBB2
+ATOM HC   HA      0.10 !  
+ATOM CHD  CPM    -0.10
+ATOM HD   HA      0.10   
+ATOM CMA  CT3    -0.27
+ATOM HMA1 HA3     0.09
+ATOM HMA2 HA3     0.09
+ATOM HMA3 HA3     0.09   
+ATOM CAA  CT2    -0.18
+ATOM HAA1 HA2     0.09
+ATOM HAA2 HA2     0.09   
+ATOM CBA  CT2    -0.28
+ATOM HBA1 HA2     0.09
+ATOM HBA2 HA2     0.09
+ATOM CGA  CC      0.62
+ATOM O1A  OC     -0.76
+ATOM O2A  OC     -0.76   
+ATOM CMB  CT3    -0.27
+ATOM HMB1 HA3     0.09
+ATOM HMB2 HA3     0.09
+ATOM HMB3 HA3     0.09 
+ATOM CAB  CE1    -0.15 !vinyl parameters updated, adm jr., May 2002
+ATOM HAB  HE1     0.15
+ATOM CBB  CE2    -0.42
+ATOM HBB1 HE2     0.21
+ATOM HBB2 HE2     0.21   
+ATOM CMC  CT3    -0.27
+ATOM HMC1 HA3     0.09
+ATOM HMC2 HA3     0.09
+ATOM HMC3 HA3     0.09  
+ATOM CAC  CE1    -0.15
+ATOM HAC  HE1     0.15
+ATOM CBC  CE2    -0.42
+ATOM HBC1 HE2     0.21
+ATOM HBC2 HE2     0.21
+ATOM CMD  CT3    -0.27
+ATOM HMD1 HA3     0.09
+ATOM HMD2 HA3     0.09
+ATOM HMD3 HA3     0.09   
+ATOM CAD  CT2    -0.18
+ATOM HAD1 HA2     0.09
+ATOM HAD2 HA2     0.09   
+ATOM CBD  CT2    -0.28
+ATOM HBD1 HA2     0.09
+ATOM HBD2 HA2     0.09
+ATOM CGD  CC      0.62
+ATOM O1D  OC     -0.76
+ATOM O2D  OC     -0.76
+RESI DCR         -1.000 ! 
+ATOM   C1   CC     +0.520  !    O2     O3       
+ATOM   O2   OC     -0.760  !     \\   //      
+ATOM   O3   OC     -0.760  !       C1                                 !       |
+ATOM   C4  CT2     -0.180  !    H5-C4-H6       
+ATOM   H5  HA2     +0.090  !       |         
+ATOM   H6  HA2     +0.090  !    H8-C7-H9                            !       |
+ATOM   C7  CT2     -0.180  !   H11-C10-H12      
+ATOM   H8  HA2     +0.090  !       |          
+ATOM   H9  HA2     +0.090  !   H14-C13-H15                           !       |
+ATOM  C10  CT2     -0.180  !   H17-C16-H18      
+ATOM  H11  HA2     +0.090  !       |          
+ATOM  H12  HA2     +0.090  !   H20-C19-H21                           !       |
+ATOM  C13  CT2     -0.180  !   H23-C22-H24      
+ATOM  H14  HA2     +0.090  !       |          
+ATOM  H15  HA2     +0.090  !   H26-C25-H27                           !       |
+ATOM  C16  CT2     -0.180  !   H29-C28-H30      
+ATOM  H17  HA2     +0.090  !       |          
+ATOM  H18  HA2     +0.090  !   H32-C31-H33                         !       |
+ATOM  C19  CT2     -0.180  !   H35-C34-H36      
+ATOM  H20  HA2     +0.090  !       |          
+ATOM  H21  HA2     +0.090  !   H38-C37-H39                        !       |
+ATOM  C22  CT2     -0.180  !   H41-C40-H42   
+ATOM  H23  HA2     +0.090  !       |          
+ATOM  H24  HA2     +0.090  !   H44-C43-H45                       !       |
+ATOM  C25  CT2     -0.180  !   H47-C46-H48          
+ATOM  H26  HA2     +0.090  !       |            
+ATOM  H27  HA2     +0.090  !   H50-C49-H51                        !       | 
+ATOM  C28  CT2     -0.180  !   H53-C52-H54      
+ATOM  H29  HA2     +0.090  !       |          
+ATOM  H30  HA2     +0.090  !   H56-C55-H57                           !       |
+ATOM  C31  CT2     -0.180  !   H59-C58-H60   
+ATOM  H32  HA2     +0.090  !       |         
+ATOM  H33  HA2     +0.090  !       H61                            !
+ATOM  C34  CT2     -0.180  !                 
+ATOM  H35  HA2     +0.090  !                 
+ATOM  H36  HA2     +0.090  !                                      !
+ATOM  C37  CT2     -0.180  !                 
+ATOM  H38  HA2     +0.090  !                 
+ATOM  H39  HA2     +0.090  !                                      !
+ATOM  C40  CT2     -0.180  !                 
+ATOM  H41  HA2     +0.090  !                 
+ATOM  H42  HA2     +0.090  !                                     ! 
+ATOM  C43  CT2     -0.180  !                 
+ATOM  H44  HA2     +0.090  !                 
+ATOM  H45  HA2     +0.090  !                                     !
+ATOM  C46  CT2     -0.180  !                 
+ATOM  H47  HA2     +0.090  !                 
+ATOM  H48  HA2     +0.090  !                                       !
+ATOM  C49  CT2     -0.180  !                 
+ATOM  H50  HA2     +0.090  !                 
+ATOM  H51  HA2     +0.090  !                                     !
+ATOM  C52  CT2     -0.180  !                 
+ATOM  H53  HA2     +0.090  !                 
+ATOM  H54  HA2     +0.090  !                 
+ATOM  C55  CT2     -0.180  !                 
+ATOM  H56  HA2     +0.090  !                 
+ATOM  H57  HA2     +0.090  !                 
+ATOM  C58  CT3     -0.270  !                 
+ATOM  H59  HA3     +0.090  !                 
+ATOM  H60  HA3     +0.090  !                 
+ATOM  H61  HA3     +0.090  ! 
+RESI CHRP          +0.0225                 
+ATOM  HPC  HPC     +0.0225
+RESI CHRN	   -0.0225
+ATOM  HNC  HNC	   -0.0255

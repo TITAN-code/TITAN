@@ -1,7 +1,5 @@
 #!/usr/bin/python
-# circle_plate_charge.py
-# Author: Jing Huang; Date: Apirl 14, 2016
-#
+
 import library_amber as lib_amb
 import processing as processing
 
@@ -32,6 +30,35 @@ def read_pdb(NAME):
 
     return pdb_contents
 
+def convert_atom_seq(ATOM_SEQ):
+    "in case of ATOM_SELECT = SELECT, the read-in ATOM_SEQ-string has to be converted into a list, i.e. an actual selection"
+    string = ATOM_SEQ
+    ATOM_SEQ = []
+    seq_list = string.split("+")
+    seq_list2 = []
+    for element in seq_list:
+        seq_list2.append(element.split("("))
+    for i in range(len(seq_list2)):
+        if seq_list2[i][0] == "P":
+            ATOM_SEQ += P(int(seq_list2[i][1].strip(")")))
+        if seq_list2[i][0] == "R":
+            boundaries = seq_list2[i][1].split(",")
+            left_boundary = int(boundaries[0])
+            right_boundary = int(boundaries[1].strip(")"))
+            ATOM_SEQ += R(left_boundary,right_boundary)
+    return ATOM_SEQ
+
+def R(i,j):
+    """define range of atoms to be read"""
+    L = []
+    L = range(i,j+1)
+    return L
+
+def P(i):
+    """ define a single atom to be read"""
+    L = [i]
+    return L
+
 def initialize_operation_amber(NAME):
     """ Initialize all lists and parameters for the charge distribution generation """
     NO_CHA = linecount1(NAME)
@@ -50,18 +77,30 @@ def initialize_operation_amber(NAME):
 
     return NO_CHA,list_pdb,T1,ATOM_N,ATOM_T,CHAIN_T,RESI_T,RESI_N,X,Y,Z,Q,CHARGE
 
-def write_charge_distribution(NAME_CHARGE_DISTRIBUTION,list_pdb,T1,X,Y,Z,Q):
+def write_charge_distribution(NAME,NAME_CHARGE_DISTRIBUTION,list_pdb,ATOM_SELECT,ATOM_SEQ,ATOM_N,ATOM_T,RESI_N,RESI_T,T1,X,Y,Z,Q):
     """ write the obtained charge distribution to a .txt output-file """
     f1 = open(NAME_CHARGE_DISTRIBUTION+".txt", "w")
-    for i in list_pdb:
-        if (T1[i] == "ATOM"):
-            print >> f1, ("%14.10f  %14.10f  %14.10f  %14.10f " %(X[i],Y[i],Z[i],Q[i]))
+    f2 = open(NAME+"_sequence"+".save", "w")
+    if ATOM_SELECT == "ALL":
+        for i in list_pdb:
+            if (T1[i] == "ATOM"):
+                print >> f1, ("%14.10f  %14.10f  %14.10f  %14.10f " %(X[i],Y[i],Z[i],Q[i]))
+                print >> f2, ("%s  %s %s  %s %14.10f  %14.10f  %14.10f  %14.10f " %(ATOM_N[i],ATOM_T[i],RESI_N[i],RESI_T[i],X[i],Y[i],Z[i],Q[i]))
+    elif ATOM_SELECT == "PART":
+        for i in list_pdb:
+            if (ATOM_N[i] in ATOM_SEQ):
+                if (T1[i] == "ATOM"):
+                    print >> f1, ("%14.10f  %14.10f  %14.10f  %14.10f " %(X[i],Y[i],Z[i],Q[i]))
+                    print >> f2, ("%s  %s %s  %s %14.10f  %14.10f  %14.10f  %14.10f " %(ATOM_N[i],ATOM_T[i],RESI_N[i],RESI_T[i],X[i],Y[i],Z[i],Q[i]))
     f1.close()
+    f2.close()
 
-def charge_distribution_generation_amber(NAME,NAME_CHARGE_DISTRIBUTION,N_TERMINAL,C_TERMINAL):
+def charge_distribution_generation_amber(NAME,NAME_CHARGE_DISTRIBUTION,ATOM_SELECT,ATOM_SEQ,N_TERMINAL,C_TERMINAL):
     """ Generate the charge distribution according the amber force field """
     pdb_contents = read_pdb(NAME)
     NO_CHA,list_pdb,T1,ATOM_N,ATOM_T,CHAIN_T,RESI_T,RESI_N,X,Y,Z,Q,CHARGE = initialize_operation_amber(NAME)
+    if ATOM_SELECT == "PART":
+        ATOM_SEQ = convert_atom_seq(ATOM_SEQ)
     list_amino = ["ALA","ARG","ASN","ASP","CYS","CYX","GLN","GLU","GLY","HID","HIE","HIP","ILE","LEU","LYS","MET","PHE","PRO","SER","THR","TRP","TYR" ,"VAL"]
     for i in list_pdb:
         RESULT = pdb_contents[i][0]
@@ -97,6 +136,6 @@ def charge_distribution_generation_amber(NAME,NAME_CHARGE_DISTRIBUTION,N_TERMINA
                 Q[i] = lib_amb.amber_charge_resid(ATOM_T[i],RESI_T[i])
                 CHARGE = CHARGE + Q[i]
 
-    write_charge_distribution(NAME_CHARGE_DISTRIBUTION,list_pdb,T1,X,Y,Z,Q)
+    write_charge_distribution(NAME,NAME_CHARGE_DISTRIBUTION,list_pdb,ATOM_SELECT,ATOM_SEQ,ATOM_N,ATOM_T,RESI_N,RESI_T,T1,X,Y,Z,Q)
     processing.write_command_line_amber(NAME,NAME_CHARGE_DISTRIBUTION,CHARGE)
 

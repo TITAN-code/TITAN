@@ -1,7 +1,5 @@
 #!/usr/bin/python
-# circle_plate_charge.py
-# Author: Jing Huang; Date: Apirl 14, 2016
-# 
+
 import math,sys,os,shutil
 import header as header
 
@@ -172,7 +170,7 @@ def P(i):
     L = [i-1]
     return L
 
-def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V1Z,V2X,V2Y,V2Z,VX,VY,VZ,COUNT):
+def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V1Z,V2X,V2Y,V2Z,VX,VY,VZ):
     """ write output of quant to .ef file """
     f1 = open(NAME+".ef", "w")
     header.header_output_file(f1)
@@ -200,9 +198,6 @@ def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V
     print >> f1, (" THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE %s.txt. "%(NAME))
     print >> f1, " "
     print >> f1, (" THERE ARE %d POINT CHARGES IN THIS CHARGE DISTRIBUTION. "%(NO_CHA))
-    print >> f1, " "
-    print >> f1, (" %d POINT CHARGES ARE CONSIDERED IN THE ELECTRIC FIELD CALCULATION." %(COUNT))
-    print >> f1, " "
     print >> f1, " "
     print >> f1, " "
     print >> f1, "-----------------------------------------------------------"

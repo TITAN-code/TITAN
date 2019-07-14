@@ -12,7 +12,7 @@ import pdb_charmm as pdb_charmm
 import direction as direction
 import header as header
 
-def titan(filename):
+def efg(filename):
     """ The main function """
     header.header_command_line()
     TYPE = input.determine_type(filename)
@@ -86,8 +86,8 @@ if __name__ == '__main__':
     # Get Input
     if len(sys.argv[1:]) == 1:
         filename = sys.argv[1]
-        titan(filename)
+        efg(filename)
     else:
         print 'ERROR: Wrong input'
         print 'Usage:'
-        print 'python titan.py filename.inp'
+        print 'python EFG.py filename.inp'

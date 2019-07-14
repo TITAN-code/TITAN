@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#
+
 import math,sys,os,shutil
 #
 import vector as vector
@@ -16,6 +16,9 @@ def move_output_cpc(NAME, OUTFORMAT):
     elif OUTFORMAT == "AMBER":
         PATH =FILE + "/AMBER_FORMAT_CPC"
         setup.check(PATH)
+    elif OUTFORMAT == "GAUSSIAN":
+        PATH =FILE + "/GAUSSIAN_FORMAT_CPC"
+        setup.check(PATH)
     else:
         print ("FATAL ERROR. WRONG INPUT FOR \"OUTFORMAT\". ")
         print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" %(OUTFORMAT))
@@ -26,6 +29,8 @@ def move_output_cpc(NAME, OUTFORMAT):
         setup.movecharmm(NAME)
     elif OUTFORMAT == "AMBER":
         setup.moveamber(NAME)
+    elif OUTFORMAT == "GAUSSIAN":
+        setup.movegaussian_CPC(NAME)
     else:
         print ("FATAL ERROR. WRONG INPUT FOR \"OUTFORMAT\". ")
         print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" %(OUTFORMAT))
@@ -90,10 +95,13 @@ def print_commandline_cpc(NAME,OUTFORMAT):
         print ("       tleap -s -f leap.in")
         print (" ")
         print (" TO GENERATE THE PDB FILE \"%.10s_amber.pdb\" IN AMBER FORMAT." %(NAME))
+    elif OUTFORMAT == "GAUSSIAN":
+        print (" ")
+        print (" THE TXT FILE CONTAINING THE TWO PARALLEL CIRCULAR PLATES IS ./GAUSSIAN_FORMAT_CPC/%.10s.txt" %(NAME))
     else:
         print ("FATAL ERROR. WRONG INPUT FOR \"OUTFORMAT\". ")
         print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT"%(OUTFORMAT))
-        print ("PLEASE SET \"OUTFORMAT\" TO \"CHARMM\" OR \"AMBER\"")
+        print ("PLEASE SET \"OUTFORMAT\" TO \"CHARMM\" , \"AMBER\" OR \"GAUSSIAN\"")
         os.exit()
     print (" ")
     print (" ")

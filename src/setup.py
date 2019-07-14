@@ -40,16 +40,27 @@ def moveamber(NAME):
   os.rename(LIB,DENT_LIB)
   os.rename(FRCMOD,DENT_FRCMOD)
   os.rename(LEAPIN,DENT_LEAPIN)
+
+def movegaussian_CPC(NAME):
+    #
+    # MOVE THE EEF IN GAUSSIAN FORMAT TO ./GAUSSIAN_FORMAT_CPC
+    #
+    INFO = NAME + ".info"
+    TXT = NAME + ".txt"
+    DENT_INFO = "./GAUSSIAN_FORMAT_CPC/" + INFO
+    DENT_TXT = "./GAUSSIAN_FORMAT_CPC/" + TXT
+    os.rename(INFO,DENT_INFO)
+    os.rename(TXT,DENT_TXT)
 #
 #
 def moveguass(NAME):
 #
-# MOVE THE EEF IN CHARMM FORMAT TO ./GUASSIAN_FORMAT_SL
+# MOVE THE EEF IN GAUSSIAN FORMAT TO ./GUASSIAN_FORMAT_SL
 #
   INFO = NAME + ".info"
   PDB = NAME + ".pdb"
   TXT = NAME + ".txt"
-  DENT_INFO = "./GUASS_FORMAT_SL/" + INFO
+  DENT_INFO = "./GAUSS_FORMAT_SL/" + INFO
   DENT_PDB = "./GUASS_FORMAT_SL/" + PDB
   DENT_TXT = "./GUASS_FORMAT_SL/" + TXT
   os.rename(INFO,DENT_INFO)

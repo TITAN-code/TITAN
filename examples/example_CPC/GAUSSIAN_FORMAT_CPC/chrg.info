@@ -1,0 +1,70 @@
+                                                                
+  ****************************************************************** 
+  *                                                                * 
+  *                    TITAN - VERSION 1.1                         * 
+  *                                                                * 
+  *           FROM THE HEBREW UNIVERISTY OF JERUSALEM              * 
+  *    JING HUANG, THIJS STUYVER,DIBYENDU MALLICK, SASON SHAIK     * 
+  *              J. COMPUT. CHEM. X, XXX-XXX (2019)                * 
+  *                                                                * 
+  ****************************************************************** 
+                                                                
+ 
+ 
+ 
+------------------------------------------------------------------ 
+ 
+          UNIFORM EXTERNAL ELECTRIC FIELD GENERATION
+ 
+------------------------------------------------------------------- 
+ 
+ 
+ THE UNIFORM EEF IS GENERATED IN GAUSSIAN FORMAT. 
+ 
+ 
+------------------------------------------------------------------ 
+                          P/N-POINT1-POINT2 ANGLE 
+------------------------------------------------------------------ 
+ 
+ 
+   SET P -> THE CENTRE OF CIRCLE PLATE WITH POSITIVE CHARGES 
+   SET N -> THE CENTRE OF CIRCLE PLATE WITH NEGATIVE CHARGES 
+ 
+   P-POINT1-POINT2 ANGLES :    180.00 DEGREE
+   N-POINT1-POINT2 ANGLES :      0.00 DEGREE
+ 
+   PLEASE CHECK WHETHER THE PLATES ARE ALIGNED WITH THE VECTOR 
+ 
+ 
+ 
+------------------------------------------------------------------ 
+                       CHARGE IN EACH PARTCLE
+------------------------------------------------------------------ 
+ 
+ 
+ IN ORDER FOR THE FIELD TO BE   0.002500 A.U., THE CHARGE SHOULD BE   0.0100 e.
+ 
+ 
+ 
+ 
+------------------------------------------------------------------ 
+                              SUMMARY: 
+------------------------------------------------------------------ 
+ 
+   The plates have been aligned with the defined vector (POINT1 -> POINT2)
+ and positioned  46.8279 Angstrom from POINT1. The two 
+ plates contain   7084 point charges, each with an 
+ absolute magnitude of   0.0100 e per point. These parameters 
+ are the settings of the charged plates with  92.4000 Angstrom
+ radius
+ 
+ 
+ THE TXT FILE OF TWO PARALLEL CIRCULAR PLATES IS        chrg.txt
+ 
+ 
+ THE ELECTRIC FIELD HAS BEEN SUCCESFULLY GENERATED. 
+ 
+****************************************************************** 
+                                                                
+NORMAL TERMINATION OF TITAN AT 2019-07-08 20:09:35
+                                                                

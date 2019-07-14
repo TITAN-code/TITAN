@@ -80,6 +80,25 @@ ________________________________________________________________________________
 
 NAME_CHARGE_DISTRIBUTION = opt
 
+#  ATOM_SELECT   |                     NOTE
+#-----------------------------------------------------------------------
+#      "ALL"        | ALL THE ATOMS IN THE PDB-FILE
+#                   | ARE SELECTED FOR THE ELECTRIC FIELD CALCULATION.
+#-----------------------------------------------------------------------
+#      "PART"       | A PART OF THE ATOMS IN THE PDB-FILE ARE SELECTED.
+#                   | (IN THIS CASE, THE “ATOM_SEQ" KEYWORD NEEDS TO BE DEFINED)
+#-----------------------------------------------------------------------
+
+ATOM_SELECT = PART
+
+# THE “ATOM_SEQ" KEYWORD IS USED TO SELECT THE ATOMS FOR ATOM_SELECT = "PART"
+# IT IS NOT NECESSARY TO SET THE “ATOM_SEQ" KEYWORD WHEN ATOM_SELECT = "ALL"
+# FOR EXAMPLE, ”ATOM_SEQ = R(3,10)+P(20)+P(3000)+R(400,403)+P(50)" MEANS: 
+# THE ATOMS FROM NO. 3 TO NO. 10, THE ATOM NO. 20, THE ATOM NO. 3000, THE ATOM FROM 
+# NO. 400 TO NO. 403 AND ATOM NO. 50 ARE SELECTED FOR THE EF CALCULATIONS.
+
+ATOM_SEQ = R(4,8)+P(20)
+
 # FORCE FIELD OF CHOICE (AMBER/CHARMM)
 FORCE = AMBER
 

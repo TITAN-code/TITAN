@@ -1,10 +1,10 @@
                                                                 
   ****************************************************************** 
   *                                                                * 
-  *                    TITAN - VERSION 1.1                         * 
+  *                    TITAN - VERSION 1.2                         * 
   *                                                                * 
   *           FROM THE HEBREW UNIVERISTY OF JERUSALEM              * 
-  *    JING HUANG, THIJS STUYVER,DIBYENDU MALLICK, SASON SHAIK     * 
+  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
   *              J. COMPUT. CHEM. X, XXX-XXX (2019)                * 
   *                                                                * 
   ****************************************************************** 
@@ -29,7 +29,7 @@
  
  THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE opt.txt. 
  
- THERE ARE 7 POINT CHARGES IN THIS CHARGE DISTRIBUTION. 
+ THERE ARE 37072 POINT CHARGES IN THIS CHARGE DISTRIBUTION. 
  
  
 -----------------------------------------------------------
@@ -40,10 +40,10 @@
  
  THE STRENGTH OF THE ELECTRIC FIELD AT POINT (0.0000000000, 0.0000000000, 1.6410000000) : 
  
- X-COMPONENT OF THE EF: -0.0000859488  A.U.;
- Y-COMPONENT OF THE EF: -0.0000139393  A.U.;
- Z-COMPONENT OF THE EF: 0.0000042263  A.U.;
- TOTAL STRENGTH OF THE EF: 0.0000871743  A.U..
+ X-COMPONENT OF THE EF: -0.0289761143  A.U.;
+ Y-COMPONENT OF THE EF: 0.0111657240  A.U.;
+ Z-COMPONENT OF THE EF: -0.0211101298  A.U.;
+ TOTAL STRENGTH OF THE EF: 0.0375489836  A.U..
  
  
  
@@ -59,7 +59,7 @@
  TO V2(0.0000000000,  0.0000000000,  1.6410000000)
  
  
- THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS 0.0000042263 A.U.
+ THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS -0.0211101298 A.U.
  
  
  THE ELECTRIC FIELD HAS SUCCESFULLY BEEN QUANTIFIED
@@ -67,5 +67,5 @@
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2019-07-10 17:33:16
+NORMAL TERMINATION OF TITAN AT 2019-07-21 23:15:31
                                                                 

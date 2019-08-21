@@ -61,8 +61,8 @@ def moveguass(NAME):
   PDB = NAME + ".pdb"
   TXT = NAME + ".txt"
   DENT_INFO = "./GAUSS_FORMAT_SL/" + INFO
-  DENT_PDB = "./GUASS_FORMAT_SL/" + PDB
-  DENT_TXT = "./GUASS_FORMAT_SL/" + TXT
+  DENT_PDB = "./GAUSS_FORMAT_SL/" + PDB
+  DENT_TXT = "./GAUSS_FORMAT_SL/" + TXT
   os.rename(INFO,DENT_INFO)
   os.rename(PDB,DENT_PDB)
   os.rename(TXT,DENT_TXT)
@@ -135,7 +135,7 @@ def checkchargetype(CHARGETYPE,SEQUENCE):
   print ("")
   print ("")
   print ("THE %.20s CHARGETYPE IS UNDERDEVELOPMENT."%(CHARGETYPE))
-  print ("PLEASE SET \"CHARGETYPE\" AS \"FRAGMENT\" OR \"DNA\". ")
+  print ("PLEASE SET \"CHARGETYPE\" AS \"FRAGMENT\" ")
   print ("")
   print ("")
   os.exit()

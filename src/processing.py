@@ -40,7 +40,7 @@ def move_output_cpc(NAME, OUTFORMAT):
 def move_output_sl(NAME1):
     """ move output to the right location """
     FILE = os.getcwd()
-    PATH = FILE + "/GUASS_FORMAT_SL"
+    PATH = FILE + "/GAUSS_FORMAT_SL"
     setup.check(PATH)
     setup.moveguass(NAME1)
 
@@ -138,8 +138,8 @@ def print_commandline_sl(NAME1,CHIRALITY,CHARGETYPE):
     print (" ")
     print (" ")
     print (" ")
-    print (" THE EXTERNAL CHARGES IN THE SPIRAL LINE SHAPE IS GENERATED IN ./GUASS_FORMAT_SL/%.10s.txt" %(NAME1))
-    print (" YOU CAN SEE THE PDB FILE FOR THE SHAPE OF CHARGES. (./GUASS_FORMAT_SL/%.10s.pdb)" %(NAME1))
+    print (" THE EXTERNAL CHARGES IN THE SPIRAL LINE SHAPE IS GENERATED IN ./GAUSS_FORMAT_SL/%.10s.txt" %(NAME1))
+    print (" YOU CAN SEE THE PDB FILE FOR THE SHAPE OF CHARGES. (./GAUSS_FORMAT_SL/%.10s.pdb)" %(NAME1))
     print (" ")
     print (" ")
     print (" ")

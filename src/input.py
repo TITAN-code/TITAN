@@ -77,11 +77,6 @@ def read_input_sl(filename):
             CHIRALITY = str(line_content[2])
         if line_content[0] == "NAME":
             NAME = str(line_content[2])
-        if line_content[0] == "CHARGETYPE":
-            CHARGETYPE = str(line_content[2])
-            if CHARGETYPE == "DNA":
-                FATOM = 7
-                CHARGE = 0.0
         if line_content[0] == "FATOM":
             FATOM = int(line_content[2])
         if line_content[0] == "SEQUENCE":
@@ -94,6 +89,8 @@ def read_input_sl(filename):
             YP = float(line_content[2])
         if line_content[0] == "ZP":
             ZP = float(line_content[2])
+    # Currently, only fragment can be chosen as CHARGETYPE
+    CHARGETYPE = "FRAGMENT"
     try:
         return RADIUS,N,STEP,CHIRALITY,NAME,CHARGETYPE,FATOM,SEQUENCE,CHARGE,XP,YP,ZP
     except:

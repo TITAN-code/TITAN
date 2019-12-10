@@ -3,9 +3,9 @@
   *                                                                * 
   *                    TITAN - VERSION 1.2                         * 
   *                                                                * 
-  *           FROM THE HEBREW UNIVERISTY OF JERUSALEM              * 
+  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * 
   *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
-  *              J. COMPUT. CHEM. X, XXX-XXX (2019)                * 
+  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * 
   *                                                                * 
   ****************************************************************** 
                                                                 
@@ -47,11 +47,11 @@
  
  
  
------------------------------------------------------------
+--------------------------------------------------------------
  
-  THE STRENGTH OF ELECTRIC FIELD ALONG DIRECTION VECTOR V
+  THE STRENGTH OF THE ELECTRIC FIELD ALONG DIRECTION VECTOR V
  
------------------------------------------------------------
+--------------------------------------------------------------
  
  
  THE DIRECTION VECTER  V  (0.0000000000,  0.0000000000,  1.6410000000), 
@@ -62,10 +62,10 @@
  THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS -0.0211101298 A.U.
  
  
- THE ELECTRIC FIELD HAS SUCCESFULLY BEEN QUANTIFIED
+ THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED
  
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2019-07-21 23:15:31
+NORMAL TERMINATION OF TITAN AT 2019-12-10 14:26:17
                                                                 

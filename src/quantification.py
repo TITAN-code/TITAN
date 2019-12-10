@@ -215,11 +215,11 @@ def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V
     print >> f1, (" ")
     print >> f1, (" ")
     print >> f1, (" ")
-    print >> f1, "-----------------------------------------------------------"
+    print >> f1, "--------------------------------------------------------------"
     print >> f1, " "
-    print >> f1, "  THE STRENGTH OF ELECTRIC FIELD ALONG DIRECTION VECTOR V"
+    print >> f1, "  THE STRENGTH OF THE ELECTRIC FIELD ALONG DIRECTION VECTOR V"
     print >> f1, " "
-    print >> f1, "-----------------------------------------------------------"
+    print >> f1, "--------------------------------------------------------------"
     print >> f1, " "
     print >> f1, " "
     print >> f1, (" THE DIRECTION VECTER  V  (%.10f,  %.10f,  %.10f), " %(VX,VY,VZ))
@@ -230,7 +230,7 @@ def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V
     print >> f1, (" THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS %.10f A.U." %(OEF))
     print >> f1, " "
     print >> f1, " "
-    print >> f1, " THE ELECTRIC FIELD HAS SUCCESFULLY BEEN QUANTIFIED"
+    print >> f1, " THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED"
     print >> f1, " "
     print >> f1, " "
     header.conclusion_output_file(f1)

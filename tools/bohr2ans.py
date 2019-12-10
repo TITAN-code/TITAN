@@ -1,7 +1,4 @@
 #!/usr/bin/python
-# calc_EFF_ans.py
-# Author: Jing Huang; Date: July 15, 2016
-
 import math,sys
 
 def header_command_line():
@@ -10,9 +7,9 @@ def header_command_line():
     print ("  *                                                                * ")
     print ("  *                    TITAN - VERSION 1.2                         * ")
     print ("  *                                                                * ")
-    print ("  *           FROM THE HEBREW UNIVERISTY OF JERUSALEM              * ")
+    print ("  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * ")
     print ("  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * ")
-    print ("  *              J. COMPUT. CHEM. X, XXX-XXX (2019)                * ")
+    print ("  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * ")
     print ("  *                                                                * ")
     print ("  ****************************************************************** ")
     print ("                                                                 ")
@@ -74,7 +71,7 @@ def convert(NAME):
     #
     print ("  ****************************************************************** ")
     print (" ")
-    print ("      THE COORDINATE CONVERSION HAS BEEN COMPLETED SUCCESFULLY ")
+    print ("      THE COORDINATE CONVERSION HAS BEEN COMPLETED SUCCESSFULLY ")
     print (" ")
     print ("  ****************************************************************** ")
 

@@ -1,7 +1,4 @@
 #!/usr/bin/python
-# script_generate.py
-# Author: Jing Huang; Date: AUG 5, 2016
-#
 import math,os,stat
 
 def linecount1(NAME):
@@ -25,9 +22,9 @@ def header_command_line():
     print ("  *                                                                * ")
     print ("  *                    TITAN - VERSION 1.2                         * ")
     print ("  *                                                                * ")
-    print ("  *           FROM THE HEBREW UNIVERISTY OF JERUSALEM              * ")
+    print ("  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * ")
     print ("  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * ")
-    print ("  *              J. COMPUT. CHEM. X, XXX-XXX (2019)                * ")
+    print ("  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * ")
     print ("  *                                                                * ")
     print ("  ****************************************************************** ")
     print ("                                                                 ")
@@ -67,7 +64,7 @@ print >> f2_top,("import datetime ")
 print >> f2_top,(" ")
 print >> f2_top,("def library_warning_message():")
 print >> f2_top,("    \"\"\" Message shown in the terminal in case the assignment of a point charge to an atom was not succesfull \"\"\"")
-print >> f2_top,("    print (\"AN ERROR HAS OCCURED!\")")
+print >> f2_top,("    print (\"AN ERROR HAS OCCURRED!\")")
 print >> f2_top,("    print (\" \")")
 print >> f2_top,("    print (\"PLEASE CONFIRM THE CORRECT ASSIGNMENT OF N_TERMINAL & C_TERMINAL IN THE INPUT FILE\")")
 print >> f2_top,("    print (\" \")")

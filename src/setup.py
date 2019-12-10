@@ -109,7 +109,7 @@ def checkchargetype(CHARGETYPE,SEQUENCE):
    N = P_NO - N_NO
    print ("")
    print ("")
-   print ("THE NUMBER OF POSTIVE CHARGES IS LARGER THAN THAT OF NEGATIVE CHARGE.")
+   print ("THE NUMBER OF POSITIVE CHARGES IS LARGER THAN THAT OF NEGATIVE CHARGE.")
    print ("")
    print ("PLEASE ADD %5d MORE NEGATIVE FRAGMENTS TO \"SEQUENCE\"."%(N))
    print ("")
@@ -120,7 +120,7 @@ def checkchargetype(CHARGETYPE,SEQUENCE):
    N = N_NO - P_NO
    print ("")
    print ("")
-   print ("THE NUMBER OF NEGATIVE CHARGES IS LARGER THAN THAT OF POSTIVE CHARGE.")
+   print ("THE NUMBER OF NEGATIVE CHARGES IS LARGER THAN THAT OF POSITIVE CHARGE.")
    print ("")
    print ("PLEASE ADD %5d MORE POSTIVE FRAGMENTS TO \"SEQUENCE\"."%(N))
    print ("")

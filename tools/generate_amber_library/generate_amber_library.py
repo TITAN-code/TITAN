@@ -1,7 +1,4 @@
 #!/usr/bin/python
-# script_generate.py
-# Author: Jing Huang; Date: AUG 5, 2016
-#
 import math,os,stat
 
 def linecount1(NAME):
@@ -25,9 +22,9 @@ def header_command_line():
     print ("  *                                                                * ")
     print ("  *                    TITAN - VERSION 1.2                         * ")
     print ("  *                                                                * ")
-    print ("  *           FROM THE HEBREW UNIVERISTY OF JERUSALEM              * ")
+    print ("  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * ")
     print ("  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * ")
-    print ("  *              J. COMPUT. CHEM. X, XXX-XXX (2019)                * ")
+    print ("  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * ")
     print ("  *                                                                * ")
     print ("  ****************************************************************** ")
     print ("                                                                 ")
@@ -49,7 +46,7 @@ print >> f2_top,("import datetime ")
 print >> f2_top,(" ")
 print >> f2_top,("def library_warning_message():")
 print >> f2_top,("    \"\"\" Message shown in the terminal in case the assignment of a point charge to an atom was not succesfull \"\"\"")
-print >> f2_top,("    print (\"AN ERROR HAS OCCURED!\")")
+print >> f2_top,("    print (\"AN ERROR HAS OCCURRED!\")")
 print >> f2_top,("    print (\" \")")
 print >> f2_top,("    print (\"PLEASE CONFIRM THE CORRECT ASSIGNMENT OF N_TERMINAL & C_TERMINAL IN THE INPUT FILE\")")
 print >> f2_top,("    print (\" \")")
@@ -101,7 +98,7 @@ for i in list_top:
   if (i == 0):
    print >> f2_top,(" if (RES_NAME == \"%s\"): " %(T2_TOP[i]))
    j = i
-  elif (T1_TOP[i] == "RESI" and i != 0): 
+  elif (T1_TOP[i] == "RESI" and i != 0):
    print >> f2_top,("   else: ")
    print >> f2_top,("     print (\"THE ATOM TYPE %s CANNOT BE FOUND IN THE RESIDUE %s.\" %(ATOM_NAME,RES_NAME)) ")
    print >> f2_top,(" elif (RES_NAME == \"%s\"):" %(T2_TOP[i]))
@@ -168,7 +165,7 @@ for i in list_n:
   if (i == 0):
    print >> f2_top,(" if (RES_NAME == \"%s\"): " %(T2_N[i]))
    j = i
-  elif (T1_N[i] == "RESI" and i != 0): 
+  elif (T1_N[i] == "RESI" and i != 0):
    print >> f2_top,("   else: ")
    print >> f2_top,("     print (\"THE ATOM TYPE %s CANNOT BE FOUND IN THE RESIDUE %s.\" %(ATOM_NAME,RES_NAME)) ")
    print >> f2_top,(" elif (RES_NAME == \"%s\"):" %(T2_N[i]))
@@ -236,7 +233,7 @@ for i in list_c:
   if (i == 0):
    print >> f2_top,(" if (RES_NAME == \"%s\"): " %(T2_C[i]))
    j = i
-  elif (T1_C[i] == "RESI" and i != 0): 
+  elif (T1_C[i] == "RESI" and i != 0):
    print >> f2_top,("   else: ")
    print >> f2_top,("     print (\"THE ATOM TYPE %s CANNOT BE FOUND IN THE RESIDUE %s.\" %(ATOM_NAME,RES_NAME)) ")
    print >> f2_top,(" elif (RES_NAME == \"%s\"):" %(T2_C[i]))
@@ -267,7 +264,7 @@ os.chmod("./library_amber_new.py",stat.S_IRWXU)
 f2_top.close()
 print ("********************************************************************************************* ")
 print (" ")
-print (" THE NEW AMBER LIBRARY \"library_amber_new.py\" WITH NON-STANDARD RESIDUE HAS BEEN GENERATED ")
+print (" THE NEW AMBER LIBRARY \"library_amber_new.py\" WITH NON-STANDARD RESIDUES HAS BEEN GENERATED ")
 print (" ")
 print ("********************************************************************************************* ")
 

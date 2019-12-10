@@ -37,7 +37,7 @@ def process_quantification_request(filename):
     if FILE == "TXT":
         quant(UNIT,NAME,CHARGE_SELECT,CHARGE_SEQ,V1X,V1Y,V1Z,V2X,V2Y,V2Z,XP,YP,ZP)
         print " "
-        print "THE ELECTRIC FIELD HAS SUCCESFULLY BEEN QUANTIFIED"
+        print "THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED"
         print " "
     elif FILE == "PDB":
         NAME_CHARGE_DISTRIBUTION,ATOM_SELECT,ATOM_SEQ,FORCE,N_TERMINAL,C_TERMINAL = input.read_input_pdb(filename)
@@ -49,7 +49,7 @@ def process_quantification_request(filename):
         quant(UNIT,NAME_CHARGE_DISTRIBUTION,CHARGE_SELECT,CHARGE_SEQ,V1X,V1Y,V1Z,V2X,V2Y,V2Z,XP,YP,ZP)
         print " "
         print "THE CHARGE DISTRIBUTION HAS BEEN WRITTEN "
-        print "& THE ELECTRIC FIELD HAS SUCCESFULLY BEEN QUANTIFIED"
+        print "& THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED"
         print " "
     else:
         print "ERROR! TYPE NOT RECOGNIZED"

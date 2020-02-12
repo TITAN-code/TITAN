@@ -504,9 +504,7 @@ def spiral_lines_charge(NAME,CHARGETYPE,SEQUENCE,FATOM,CHARGE,RADII,STEP,N,CHIRA
   X0= R - XARG; Y0= 0.000 - YARG; Z0= ((-1.0)*N_L*STEP/2.0) - ZARG
   for i in ITER:    # Set the number of ring
     for j in range(1,FATOM+1):
-      if (CHARGETYPE == "DNA"):
-        (TYPEA,TYPER,CHARGE_A) = charge_type.dna(SEQUENCE[i-1],j)
-      else:
+      if (CHARGETYPE == "FRAGMENT"):
         (TYPEA,TYPER,CHARGE_A) = charge_type.frag(SEQUENCE[i-1],j,CHARGE)
       #
       k = FATOM*i + j - FATOM -1

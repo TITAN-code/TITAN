@@ -20,7 +20,7 @@ def header_command_line():
     print ("                                                                 ")
     print ("  ****************************************************************** ")
     print ("  *                                                                * ")
-    print ("  *                    TITAN - VERSION 1.2                         * ")
+    print ("  *                    TITAN - VERSION 1.3                         * ")
     print ("  *                                                                * ")
     print ("  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * ")
     print ("  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * ")

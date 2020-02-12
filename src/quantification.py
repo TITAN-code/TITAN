@@ -222,7 +222,7 @@ def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V
     print >> f1, "--------------------------------------------------------------"
     print >> f1, " "
     print >> f1, " "
-    print >> f1, (" THE DIRECTION VECTER  V  (%.10f,  %.10f,  %.10f), " %(VX,VY,VZ))
+    print >> f1, (" THE DIRECTION VECTOR  V  (%.10f,  %.10f,  %.10f), " %(VX,VY,VZ))
     print >> f1, (" DEFINED FROM POINT V1(%.10f,  %.10f,  %.10f)"%(V1X,V1Y,V1Z))
     print >> f1, (" TO V2(%.10f,  %.10f,  %.10f)"%(V2X,V2Y,V2Z))
     print >> f1, " "
@@ -235,5 +235,3 @@ def write_output_quant(UNIT,NAME,NO_CHA,EFX,EFY,EFZ,OEF,EFTOT,XP,YP,ZP,V1X,V1Y,V
     print >> f1, " "
     header.conclusion_output_file(f1)
     f1.close()
-
-

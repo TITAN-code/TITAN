@@ -10,11 +10,16 @@ def exception_message(filename):
     print (" ----- ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + " -----")
     sys.exit()
 
-def determine_type(filename):
-    """ determine type of calculation """
+def generate_line_list(filename):
+    """ read the content of the file into a line_list"""
     with open(filename,'r') as f_obj:
         contents = f_obj.read()
         line_list = contents.split("\n")
+    return line_list
+
+def determine_type(filename):
+    """ determine type of calculation """
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "TYPE":
@@ -26,9 +31,7 @@ def determine_type(filename):
 
 def read_input_cpc(filename):
     """ read parameters for cpc calculation """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "R":
@@ -62,9 +65,7 @@ def read_input_cpc(filename):
 
 def read_input_sl(filename):
     """ read parameters for SL calculation. """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "RADIUS":
@@ -98,9 +99,7 @@ def read_input_sl(filename):
 
 def read_input_quantification(filename):
     """ read parameters for EF quantification """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "UNIT":
@@ -125,9 +124,7 @@ def read_input_quantification(filename):
 
 def read_input_quantification_manual(filename):
     """ in case DIRECTION = MANUAL was selected, the direction vector parameters have to be read """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "V1X":
@@ -155,9 +152,7 @@ def read_input_quantification_manual(filename):
 
 def read_input_quantification_select(filename):
     """ in case DIRECTION = SELECT was selected, the coordination file and atom numbers determining the direction vector parameters have to be read """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "DIRECTION_FILE":
@@ -174,11 +169,9 @@ def read_input_quantification_select(filename):
     except:
         exception_message(filename)
 
-def read_input_pdb(filename):
-    """ read the additional parameters in case the starting point for EF quantification is a .pdb file """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+def read_input_no_txt(filename):
+    """ read the additional parameters in case the starting point for EF quantification is not a .txt file"""
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "NAME_CHARGE_DISTRIBUTION":
@@ -187,6 +180,32 @@ def read_input_pdb(filename):
             ATOM_SELECT = str(line_content[2])
         if line_content[0] == "ATOM_SEQ":
             ATOM_SEQ = line_content[2]
+
+    if ATOM_SELECT == "ALL":
+        ATOM_SEQ = " "
+    try:
+        return NAME_CHARGE_DISTRIBUTION,ATOM_SELECT,ATOM_SEQ
+    except:
+        exception_message(filename)
+
+def read_input_log(filename):
+    """ read the additional parameters in case the starting point for EF quantification is a .log file"""
+    line_list = generate_line_list(filename)
+    for line in line_list:
+        line_content = line.split(" ")
+        if line_content[0] == "TYPE_OF_CHARGES":
+            TYPE_OF_CHARGES = str(line_content[2])
+
+    try:
+        return TYPE_OF_CHARGES
+    except:
+        exception_message(filename)
+
+def read_input_pdb(filename):
+    """ read the additional parameters in case the starting point for EF quantification is a .pdb file """
+    line_list = generate_line_list(filename)
+    for line in line_list:
+        line_content = line.split(" ")
         if line_content[0] == "FORCE":
             FORCE = str(line_content[2])
         if line_content[0] == "N_TERMINAL":
@@ -194,18 +213,14 @@ def read_input_pdb(filename):
         if line_content[0] == "C_TERMINAL":
             C_TERMINAL = [int(line_content[2])]
 
-    if ATOM_SELECT == "ALL":
-        ATOM_SEQ = " "
     try:
-        return NAME_CHARGE_DISTRIBUTION,ATOM_SELECT,ATOM_SEQ,FORCE,N_TERMINAL,C_TERMINAL
+        return FORCE,N_TERMINAL,C_TERMINAL
     except:
         exception_message(filename)
 
 def read_input_charmm(filename):
     """ read the additional parameters in case the selected force field for the charge distribution to be extracted from the .pdb file is CHARMM """
-    with open(filename,'r') as f_obj:
-        contents = f_obj.read()
-        line_list = contents.split("\n")
+    line_list = generate_line_list(filename)
     for line in line_list:
         line_content = line.split(" ")
         if line_content[0] == "ASPP":

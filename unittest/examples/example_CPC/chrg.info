@@ -1,0 +1,75 @@
+                                                                
+  ****************************************************************** 
+  *                                                                * 
+  *                    TITAN - VERSION 2.0                         * 
+  *                                                                * 
+  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * 
+  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
+  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * 
+  *                                                                * 
+  ****************************************************************** 
+                                                                
+ 
+ 
+ 
+------------------------------------------------------------------ 
+ 
+          UNIFORM EXTERNAL ELECTRIC FIELD GENERATION 
+ 
+------------------------------------------------------------------- 
+ 
+ 
+ THE UNIFORM EEF IS GENERATED IN AMBER FORMAT. 
+ 
+ THE UNIT OF LENGTH IS BOHR
+ 
+ 
+------------------------------------------------------------------ 
+                       CHARGE IN EACH PARTICLE 
+------------------------------------------------------------------  
+ 
+ IN ORDER FOR THE FIELD TO BE   0.002500 A.U., THE CHARGE SHOULD BE   0.0028 e. 
+ 
+ 
+ 
+------------------------------------------------------------------ 
+                TOPOLOGY AND PARAMETER FOR CHARGES 
+------------------------------------------------------------------ 
+ 
+ 
+ SEE "chrg.lib" IN "AMBER_FORMAT/" FOLDER 
+ SEE "chrg.frcmod" IN "AMBER_FORMAT/" FOLDER 
+ 
+ 
+------------------------------------------------------------------ 
+                         PDB in AMBER FORMAT 
+------------------------------------------------------------------ 
+ 
+ USE THE COMMAND in "AMBER_FORMAT/" FOLDER: 
+ 
+      tleap -s -f leap.in 
+ 
+ THE PDB FILE OF EEF IS "chrg_amber.pdb". 
+ 
+ 
+ 
+------------------------------------------------------------------ 
+                              SUMMARY: 
+------------------------------------------------------------------ 
+ 
+   The plates have been aligned with the defined vector (POINT1 -> POINT2) 
+ and positioned  46.8279 Angstrom from POINT1. The two 
+ plates contain   7084 point charges, each with an 
+ absolute magnitude of   0.0028 e per point. These parameters 
+ are the settings of the charged plates with  92.4000 Angstrom 
+ radius 
+ 
+ 
+ THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS        chrg.pdb 
+ 
+ 
+ THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. 
+ 
+****************************************************************** 
+                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-07 12:09:30                                                                

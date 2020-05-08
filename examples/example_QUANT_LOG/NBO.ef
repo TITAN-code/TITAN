@@ -1,7 +1,7 @@
                                                                 
   ****************************************************************** 
   *                                                                * 
-  *                    TITAN - VERSION 1.3                         * 
+  *                    TITAN - VERSION 2.0                         * 
   *                                                                * 
   *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * 
   *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
@@ -27,7 +27,7 @@
  
 -----------------------------------------------------------
  
- THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE NBO.txt. 
+ THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE examples/example_QUANT_LOG/NBO.txt. 
  
  THERE ARE 79 POINT CHARGES IN THIS CHARGE DISTRIBUTION. 
  
@@ -40,10 +40,10 @@
  
  THE STRENGTH OF THE ELECTRIC FIELD AT POINT (0.0000000000, 0.0000000000, 0.0000000000) : 
  
- X-COMPONENT OF THE EF: -1.6549655527  A.U.;
- Y-COMPONENT OF THE EF: -0.1031789400  A.U.;
- Z-COMPONENT OF THE EF: 3.7514942832  A.U.;
- TOTAL STRENGTH OF THE EF: 4.1016175140  A.U..
+ X-COMPONENT OF THE EF: -1.6557186212  A.U.;
+ Y-COMPONENT OF THE EF: -0.1034086328  A.U.;
+ Z-COMPONENT OF THE EF: 3.7534039842  A.U.;
+ TOTAL STRENGTH OF THE EF: 4.1036738378  A.U..
  
  
  
@@ -59,7 +59,7 @@
  TO V2(0.0000000000,  0.0000000000,  3.1010000000)
  
  
- THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS 3.7514942832 A.U.
+ THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS 3.7534039842 A.U.
  
  
  THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED
@@ -67,5 +67,4 @@
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2020-02-12 17:33:08
-                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-08 15:06:00                                                                

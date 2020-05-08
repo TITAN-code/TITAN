@@ -1,0 +1,116 @@
+                                                                
+  ****************************************************************** 
+  *                                                                * 
+  *                    TITAN - VERSION 2.0                         * 
+  *                                                                * 
+  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * 
+  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
+  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * 
+  *                                                                * 
+  ****************************************************************** 
+                                                                
+ 
+ 
+ 
+------------------------------------------------------------------ 
+ 
+               EXTERNAL SPIRAL LINE CHARGE GENERATION 
+ 
+------------------------------------------------------------------- 
+ 
+ 
+ THE EEF IS GENERATED IN GAUSSIAN FORMAT 
+ WITH A COPY OF THE POSITIONS ALSO IN PDB FORMAT. 
+ 
+ THE UNIT OF LENGTH IS ANGSTROM
+ 
+ 
+------------------------------------------------------------------ 
+                     CHARGES OF FRAGMENT 
+------------------------------------------------------------------ 
+  THE CHARGES OF IN THE POINTS OF THE "P" FRAGMENT ARE  0.100000. 
+ THE CHARGES OF IN THE POINTS OF THE "N" FRAGMENT ARE -0.100000. 
+ 
+ 
+-------------------------------- 
+   FRAGMENT  | ATOM | CHARGE    
+             | TYPE |           
+-------------------------------- 
+             |  P0  |   0.100000 
+   FRAGMENT  |  P1  |   0.100000 
+      P      |  P2  |   0.100000 
+             |  P3  |   0.100000 
+             |  P4  |   0.100000 
+             |   .  |    . 
+             |   .  |    . 
+             |   .  |    . 
+--------------------------------- 
+             |  N0  |  -0.100000 
+   FRAGMENT  |  N1  |  -0.100000 
+      N      |  N2  |  -0.100000 
+             |  N3  |  -0.100000 
+             |  N4  |  -0.100000 
+             |   .  |    . 
+             |   .  |    . 
+             |   .  |    . 
+--------------------------------- 
+ 
+ 
+ 
+------------------------------------------------------------------ 
+                           GAUSSIAN INPUT 
+------------------------------------------------------------------ 
+ 
+ 
+ THE EXTERNAL CHARGES ARE AVAILABLE IN sl_test.txt FILE. 
+ PLEASE USE "CHARGE" KEYWORDS IN GAUSSIAN 09 CALCULATION. 
+ 
+ FORMAT: 
+     X_COORDINATE    Y_COORDINATE    Z_COORDINATE    CHARGE 
+ 
+ 
+ IF YOU WANT TO VISUALIZE THE SPIRAL LINE CHARGE DISTRIBUTION GENERATED, 
+ PLEASE SEE sl_test.pdb FILE. 
+ 
+ 
+------------------------------------------------------------------ 
+                       ELECTRIC FIELD 
+------------------------------------------------------------------ 
+ 
+ 
+ 
+ THE GEOMETRICAL CENTER OF THE POINT CHARGE DISTRIBUTION IS LOCATED AT (0,0,0) 
+ 
+ 
+ THE ELECTRIC FIELD (EF) AT ( 0.000000,  0.000000,  0.000000) IS : 
+ X-COMPONENT OF EF: -0.000561  A.U.; 
+ Y-COMPONENT OF EF:  0.003331  A.U.; 
+ Z-COMPONENT OF EF:  0.001549  A.U.; 
+ TOTAL VALUE OF EF:  0.003716  A.U.. 
+ 
+------------------------------------------------------------------ 
+                       SUMMARY: 
+------------------------------------------------------------------ 
+ 
+ 
+  The spiral line is generated in RIGHT-HANDed chirality. 
+ The pitch of the spiral line is  36.3900 Angstrom. 
+ The radius of the spiral line is  10.0000 Angstrom. 
+ The line contains   3640 point charges in total. 
+ The sequence is the following: 
+ " PPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPNPPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPNPPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPNPPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPNPPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPNPPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPNPPNNPPNPNPNPNNPPNNPNNPPNNPNPNPNPNPPPPPNPNNPNPNNPNNPN ". 
+ 
+ There are 10 points in the fragment of "P" or "N". 
+ The charges of each points are  0.100000 and -0.100000 for the fragments. 
+ of "P" and "N" respectively. 
+ 
+ 
+ THE GAUSSIAN EXTERNAL CHARGE OF TWO SPIRAL LINES IS SHOWN IN sl_test.txt 
+ THE PDB FILE FOR THE SPIRAL LINE IS sl_test.pdb 
+ 
+ 
+ THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. 
+ 
+****************************************************************** 
+                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-08 23:35:21                                                                

@@ -1,0 +1,70 @@
+                                                                
+  ****************************************************************** 
+  *                                                                * 
+  *                    TITAN - VERSION 2.0                         * 
+  *                                                                * 
+  *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * 
+  *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
+  *              J. COMPUT. CHEM. 41, 74-81 (2020)                 * 
+  *                                                                * 
+  ****************************************************************** 
+                                                                
+ 
+ 
+-----------------------------------------------------------
+ 
+          ELECTRIC FIELD STRENGTH QUANTIFICATION
+ 
+-----------------------------------------------------------
+ 
+ 
+ THE UNIT OF LENGTH IS ANGSTROM
+ 
+ 
+-----------------------------------------------------------
+ 
+                      CHARGE DISTRIBUTION
+ 
+-----------------------------------------------------------
+ 
+ THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE chrg.txt. 
+ 
+ THERE ARE 7084 POINT CHARGES IN THIS CHARGE DISTRIBUTION. 
+ 
+ 
+-----------------------------------------------------------
+ 
+             THE STRENGTH OF THE ELECTRIC FIELD
+ 
+-----------------------------------------------------------
+ 
+ THE STRENGTH OF THE ELECTRIC FIELD AT POINT (0.0000000000, 0.0000000000, 0.0000000000) : 
+ 
+ X-COMPONENT OF THE EF: 0.0010489953  A.U.;
+ Y-COMPONENT OF THE EF: 0.0018881915  A.U.;
+ Z-COMPONENT OF THE EF: 0.0012587943  A.U.;
+ TOTAL STRENGTH OF THE EF: 0.0025000443  A.U..
+ 
+ 
+ 
+--------------------------------------------------------------
+ 
+  THE STRENGTH OF THE ELECTRIC FIELD ALONG DIRECTION VECTOR V
+ 
+--------------------------------------------------------------
+ 
+ 
+ THE DIRECTION VECTOR  V  (5.0000000000,  9.0000000000,  6.0000000000), 
+ DEFINED FROM POINT V1(0.0000000000,  0.0000000000,  0.0000000000)
+ TO V2(5.0000000000,  9.0000000000,  6.0000000000)
+ 
+ 
+ THE STRENGTH OF THE EF ORIENTED ALONG THE DIRECTION VECTOR V IS 0.0025000443 A.U.
+ 
+ 
+ THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED
+ 
+ 
+****************************************************************** 
+                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-07 12:31:44                                                                

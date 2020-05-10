@@ -26,8 +26,7 @@ class CircularGenerate():
 
     Methods:
     --------
-
-    create_plates : creates the plates and writes them to the respective input files
+    create_and_write_plates : creates the plates and writes them to the respective input files
     """
     initial_charge = 1.00  # initial charge; will be updated once the charged plates have been constructed
 
@@ -53,25 +52,6 @@ class CircularGenerate():
 
         self.charge_distribution_cpc = ChargeDistributionCpc()
 
-    def initialize_vector(self):
-        """
-        Initializes the vector from point1 -> point2
-
-        :returns
-
-        V_X,V_Y,V_Z : float
-            The vector components
-        unit vector : tuple
-            The unit vector
-        """
-        V_X = self.point2_X - self.point1_X
-        V_Y = self.point2_Y - self.point1_Y
-        V_Z = self.point2_Z - self.point1_Z
-
-        unit_vector = self.normalize_vector(V_X, V_Y, V_Z)
-
-        return V_X, V_Y, V_Z, unit_vector
-
     def create_and_write_plates(self, out_format):
         """
         Creates the positive and negative plates and writes them to output files
@@ -95,6 +75,25 @@ class CircularGenerate():
 
         # move the output to a dedicated folder
         self.move_output(out_format)
+
+    def initialize_vector(self):
+        """
+        Initializes the vector from point1 -> point2
+
+        :returns
+
+        V_X,V_Y,V_Z : float
+            The vector components
+        unit vector : tuple
+            The unit vector
+        """
+        V_X = self.point2_X - self.point1_X
+        V_Y = self.point2_Y - self.point1_Y
+        V_Z = self.point2_Z - self.point1_Z
+
+        unit_vector = self.normalize_vector(V_X, V_Y, V_Z)
+
+        return V_X, V_Y, V_Z, unit_vector
 
     def create_plate(self, charge):
         """
@@ -338,7 +337,7 @@ class CircularGenerate():
         """
         Writes the summary of the calculation to the .info output-file
         """
-        f2 = open(self.name +".info", "w")
+        f2 = open(self.name +".info", "w", encoding="utf-8")
         header.header_output_file(f2)
         f2.write(" \n")
         f2.write(" \n")

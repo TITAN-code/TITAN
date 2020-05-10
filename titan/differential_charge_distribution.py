@@ -78,7 +78,7 @@ class DifferentialDistributionCalculation:
     def read_coordinates_and_charges_from_txt(self, name):
         """ reads coordinates and charges from .txt file to quantify local electric field """
         content = []
-        with open(name + ".txt", "r") as input_file:
+        with open(name + ".txt", "r", encoding="utf-8") as input_file:
             for line in input_file:
                 content.append(list(map(float, line.split())))
                 if not line.split():

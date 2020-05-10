@@ -1,10 +1,10 @@
 TITAN - elecTric fIeld generaTion And maNipulation - is an open-source software package 
-capable of (a) generating external electric fields by creating collections of point charges
+capable of (a) generating external electric fields by creating collections of point-charges 
 around chemical systems, and (b) quantifying electric fields at any location based on a 
-charge distribution, e. g. the local electric fields (LEF), caused by the charge 
-distribution in distant regions, experienced at the active site of a (bio)chemical system.
+charge distribution, e. g. the local electric fields (LEF) experienced at the active site
+of a (bio)chemical system, caused by the charged functional groups in distant regions.
 
-Copyright (C) 2019 The TITAN Development Team
+Copyright (C) 2020 The TITAN Development Team
 
 This file is part of TITAN
 

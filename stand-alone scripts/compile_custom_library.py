@@ -19,12 +19,12 @@ class Library():
 
     def store_charge_dictionary(self, name):
         """ stores the charge dictionary in a .json file """
-        with open(name + ".json", "w") as json_file:
+        with open(name + ".json", "w", encoding="utf-8") as json_file:
             json.dump(self.charge_dictionary, json_file)
 
     def load_charge_dictionary(self, name):
         """ loads the charge dictionary from a .json file """
-        with open(name + ".json", "r") as json_file:
+        with open(name + ".json", "r", encoding="utf-8") as json_file:
             self.charge_dictionary = json.load(json_file)
 
     def reset_charge_dictionary(self):
@@ -41,7 +41,7 @@ class AmberLibrary(Library):
     def append_charge_dictionary(self, name):
         """ adds (key,value) couples to the library from an amber-library file """
         content = []
-        with open(name, "r") as lib_file:
+        with open(name, "r", encoding="utf-8") as lib_file:
             for line in lib_file:
                 content.append(line.split(" "))
                 if not line.split():
@@ -72,7 +72,7 @@ class CharmmLibrary(Library):
     def append_charge_dictionary(self, name):
         """ adds (key,value) couples to the library from a charmm-library file """
         content = []
-        with open(name, "r") as lib_file:
+        with open(name, "r", encoding="utf-8") as lib_file:
             for line in lib_file:
                 content.append(line.strip(" \n").split(" "))
                 if not line.split():

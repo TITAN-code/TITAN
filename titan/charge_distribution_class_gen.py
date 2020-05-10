@@ -54,13 +54,13 @@ class ChargeDistributionCpc(ChargeDistributionGenerate):
 
     def write_point_charge_list(self, output_format, name):
         if output_format.upper() == "GAUSSIAN":
-            output_file = open(name + ".txt", "w")
+            output_file = open(name + ".txt", "w", encoding="utf-8")
             self.gaussian_write_point_charges(output_file)
         elif output_format.upper() == "AMBER":
-            output_file = open(name + ".pdb", "w")
+            output_file = open(name + ".pdb", "w", encoding="utf-8")
             self.amber_write_point_charges(output_file, name)
         elif output_format.upper() == "CHARMM":
-            output_file = open(name + ".pdb", "w")
+            output_file = open(name + ".pdb", "w", encoding="utf-8")
             self.charmm_write_point_charges(output_file)
 
         output_file.close()
@@ -119,11 +119,11 @@ class ChargeDistributionSl(ChargeDistributionGenerate):
         self.point_charge_list.append(point_charge)
 
     def write_point_charge_list(self, name, fragment_size):
-        gauss = open(name + ".txt", "w")
+        gauss = open(name + ".txt", "w", encoding="utf-8")
         self.gaussian_write_point_charges(gauss)
         gauss.close()
 
-        pdb = open(name + ".pdb", "w")
+        pdb = open(name + ".pdb", "w", encoding="utf-8")
         for i in range(len(self.point_charge_list)):
             pdb.write("ATOM %6d%5s %.4s %4d    %8.3f%8.3f%8.3f  1.00  0.00      SLDC \n" % (
                 i + 1, self.point_charge_list[i][2], self.point_charge_list[i][3], int(float(i) / fragment_size) + 1, self.point_charge_list[i][0][0],

@@ -9,7 +9,7 @@ class InputReader:
 
     def generate_line_list(self):
         """ read the content of the file into a line_list"""
-        with open(self.filename, 'r') as f_obj:
+        with open(self.filename, 'r', encoding="utf-8") as f_obj:
             contents = f_obj.read()
             line_list = contents.split("\n")
         for i in range(len(line_list)):
@@ -215,7 +215,7 @@ class InputReader:
     def read_direction_file(self, direction_file):
         """ Read the DIRECTION_FILE """
         content_list = []
-        with open(direction_file + ".txt", "r") as file_point:
+        with open(direction_file + ".txt", "r", encoding="utf-8") as file_point:
             for line in file_point:
                 content_list.append(list(line.split()))
                 if not line.split():

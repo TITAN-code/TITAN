@@ -231,7 +231,7 @@ class TestExamples(unittest.TestCase):
         self.assertAlmostEqual(oef, -0.0001016013, 6)
 
     def test_example_quant_txt(self):
-        input_reader = input.InputReader("examples/example_QUANT_TXT/TITAN_QUANTIFICATION_TXT.inp")
+        input_reader = input.InputReader("examples/example_QUANT_TXT/TITAN_QUANTIFICATION_txt.inp")
         unit, file_type, name, charge_select, charge_seq, direction, v1x, v1y, v1z, v2x, v2y, v2z, \
                     point_x, point_y, point_z = input_reader.read_input_quantification()
         quantification_txt = quant_txt.QuantificationTxt(name, point_x, point_y, point_z, v1x, v1y, v1z,

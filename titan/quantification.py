@@ -91,7 +91,7 @@ class Quantification():
 
     def write_output_quantification_calculation(self, efx, efy, efz, ef_tot, oef):
         """ write output of quantification calculation to .ef file """
-        f1 = open(self.name + ".ef", "w")
+        f1 = open(self.name + ".ef", "w", encoding="utf-8")
         header.header_output_file(f1)
         f1.write(" \n")
         f1.write(" \n")

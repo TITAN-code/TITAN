@@ -2,7 +2,7 @@ from titan.myimports import *
 
 def amberlib_cpc(name,charge):
     """ generate *.lib for amber output """
-    libfile = open(name+".lib", "w")
+    libfile = open(name+".lib", "w", encoding="utf-8")
     libfile.write("!!index array str \n")
     libfile.write(" \"CRP\" \n")
     libfile.write(" \"CRN\" \n")
@@ -83,7 +83,7 @@ def amberlib_cpc(name,charge):
 
 def amberfrcmod_cpc(name):
     """generate *.frcmod for amber output"""
-    frcmodfile = open(name+".frcmod", "w")
+    frcmodfile = open(name+".frcmod", "w", encoding="utf-8")
     frcmodfile.write("DUMMY ATOM WITH POSITIVE AND NEGATIVE CHARGES \n")
     frcmodfile.write("MASS \n")
     frcmodfile.write("DP        0.0000   0.0000 \n")
@@ -104,7 +104,7 @@ def amberfrcmod_cpc(name):
 #
 def amberleapin_cpc(name):
     """generate *.in for amber output"""
-    leap = open("leap.in", "w")
+    leap = open("leap.in", "w", encoding="utf-8")
     leap.write("source leaprc.ff99SB \n")
     leap.write("lib = loadoff %.10s.lib \n"%(name))
     leap.write("check lib \n")

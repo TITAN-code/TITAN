@@ -27,7 +27,7 @@
  
 -----------------------------------------------------------
  
- THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE examples/example_QUANT_LOG/NBO.txt. 
+ THE CHARGE DISTRIBUTION IS SHOWN IN THE FILE NBO.txt. 
  
  THERE ARE 79 POINT CHARGES IN THIS CHARGE DISTRIBUTION. 
  
@@ -67,4 +67,4 @@
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2020-05-08 15:06:00                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-10 23:43:25                                                                

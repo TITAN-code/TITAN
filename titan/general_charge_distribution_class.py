@@ -9,12 +9,16 @@ class ChargeDistribution():
     point_charge_list : list
         The list containing the coordinates and charge values associated to the point-charges
         which make up the point-charge distribution
+
     """
     def __init__(self):
         self.point_charge_list = []
 
     def construct_point_charge_list(self, all_charge_list, charge_seq, charge_select = "ALL"):
-        """ select point-charges from the all_charge_list to be included in the electric field calculation """
+        """
+        selects point-charges from the external all_charge_list to be included in the electric field calculation
+        and stores them in the point_charge_list
+        """
         self.reset_point_charge_list()
         number_of_point_charges = len(all_charge_list)
         if charge_select.upper() == "PART":
@@ -31,25 +35,28 @@ class ChargeDistribution():
         self.point_charge_list = []
 
     def write_point_charge_list_to_txt_file(self, name):
-        """ writes the point_charge_list to an output-file """
-        with open(name + ".txt", "w") as output_file:
+        """ writes the point_charge_list to the name.txt output-file """
+        with open(name + ".txt", "w", encoding="utf-8") as output_file:
             for point_charge in self.point_charge_list:
                 output_file.write(" %8.5f     %8.5f     %8.5f     %8.5f \n" %(
                     point_charge[0][0], point_charge[0][1], point_charge[0][2], point_charge[1]))
         output_file.close()
 
-    def calculate_oriented_electric_field(self, point_x, point_y, point_z, vector_x, vector_y, vector_z, unit):
+    def calculate_oriented_electric_field(self, point_x, point_y, point_z, vector_x, vector_y, vector_z, unit="ANS"):
         """
-        calculates the electric field exerted along (vector_x, vector_y, vector_z)-direction at
-        (point_x, point_y, point_z)
+        calculates the electric field exerted by the charge distribution in point_charge_list along
+        (vector_x, vector_y, vector_z)-direction at (point_x, point_y, point_z)
         """
         efx, efy, efz, ef_tot = self.calculate_electric_field(point_x, point_y, point_z, unit)
         oef = self.projvU(efx, efy, efz, vector_x, vector_y, vector_z)
 
         return oef
 
-    def calculate_electric_field(self, point_x, point_y, point_z, unit):
-        """ calculates the electric field exerted by the charge distribution at position (x, y, z) """
+    def calculate_electric_field(self, point_x, point_y, point_z, unit="ANS"):
+        """
+        calculates the electric field exerted by the charge distribution in point_charge_list at position
+        (point_x, point_y, point_z)
+        """
         efx_tot = 0.0
         efy_tot = 0.0
         efz_tot = 0.0
@@ -62,7 +69,7 @@ class ChargeDistribution():
                 efx, efy, efz = self.ef_xyz_bohr(point_charge[0][0], point_charge[0][1], point_charge[0][2],
                                                    point_charge[1], point_x, point_y, point_z)
             else:
-                print("error")
+                print("ERROR: UNIT NEEDS TO BE ANS OR BOHR!")
                 os.exit()
 
             efx_tot += efx

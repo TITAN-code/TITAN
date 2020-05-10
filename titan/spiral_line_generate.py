@@ -236,7 +236,7 @@ class SpiralLineGenerate():
         """
         Writes the summary of the calculation to the .info output-file
         """
-        f2 = open(self.name + ".info", "w")
+        f2 = open(self.name + ".info", "w", encoding="utf-8")
         header.header_output_file(f2)
         f2.write(" \n")
         f2.write(" \n")

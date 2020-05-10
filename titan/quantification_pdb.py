@@ -56,7 +56,7 @@ class QuantificationPdb(Quantification):
     def import_content_from_pdb_input(self):
         """ read and extract the content of the .pdb file """
         pdb_content = []
-        with open(self.name + ".pdb", "r") as file_pdb:
+        with open(self.name + ".pdb", "r", encoding="utf-8") as file_pdb:
             for line in file_pdb:
                 pdb_content.append(list(line.split('\n')))
                 if not line.split():
@@ -133,7 +133,7 @@ class QuantificationPdbAmber(QuantificationPdb):
         pdb_content = self.import_content_from_pdb_input()
 
         library_path = os.path.dirname(os.path.realpath(__file__))
-        with open(str(library_path) + "/amber_library.json", "r") as json_file:
+        with open(str(library_path) + "/amber_library.json", "r", encoding="utf-8") as json_file:
             amber_library = json.load(json_file)
 
         counter = 0
@@ -237,7 +237,7 @@ class QuantificationPdbCharmm(QuantificationPdb):
         pdb_content = self.import_content_from_pdb_input()
 
         library_path = os.path.dirname(os.path.realpath(__file__))
-        with open(str(library_path) + "/charmm_library.json", "r") as json_file:
+        with open(str(library_path) + "/charmm_library.json", "r", encoding="utf-8") as json_file:
             charmm_library = json.load(json_file)
 
         counter = 0

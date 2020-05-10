@@ -69,7 +69,7 @@ class QuantificationLog(Quantification):
     def write_save_file(self, elements):
         """ constructs the .save file containing the element names as well as the point-charges """
         i = 0
-        with open(self.name + ".save", "w") as save_file:
+        with open(self.name + ".save", "w", encoding="utf-8") as save_file:
             for point_charge in self.full_charge_distribution.point_charge_list:
                 save_file.write("%3s   %8.5f     %8.5f     %8.5f     %8.3f \n" % (
                     elements[i], point_charge[0][0], point_charge[0][1], point_charge[0][2], point_charge[1]))
@@ -127,7 +127,7 @@ class QuantificationLog(Quantification):
 
     def obtain_line_list(self):
         """ construct line_list from .log file """
-        with open(self.name + ".log", "r") as input_file:
+        with open(self.name + ".log", "r", encoding="utf-8") as input_file:
             content = input_file.read()
             line_list = content.split("\n")
         input_file.close()

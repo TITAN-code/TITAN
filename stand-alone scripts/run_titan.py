@@ -1,12 +1,12 @@
-from titan import processing as processing
-from titan import circular_generate as circ
-from titan import spiral_line_generate as sl
-from titan import quantification_txt as quant_txt
-from titan import quantification_pdb as quant_pdb
-from titan import quantification_log as quant_log
-from titan import header as header
-from titan import input as input
-from titan.myimports import *
+from titan import _processing as processing
+from titan import _circular_generate as circ
+from titan import _spiral_line_generate as sl
+from titan import _quantification_txt as quant_txt
+from titan import _quantification_pdb as quant_pdb
+from titan import _quantification_log as quant_log
+from titan import _header as header
+from titan import _input as input
+import sys
 
 def titan(filename):
     """ The main function """

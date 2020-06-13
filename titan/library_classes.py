@@ -1,4 +1,4 @@
-import json
+import json as _json
 
 class Library():
     """
@@ -19,12 +19,12 @@ class Library():
     def store_charge_dictionary(self, name):
         """ stores the charge dictionary in a .json file """
         with open(name + ".json", "w", encoding="utf-8") as json_file:
-            json.dump(self.charge_dictionary, json_file)
+            _json.dump(self.charge_dictionary, json_file)
 
     def load_charge_dictionary(self, name):
         """ loads the charge dictionary from a .json file """
         with open(name + ".json", "r", encoding="utf-8") as json_file:
-            self.charge_dictionary = json.load(json_file)
+            self.charge_dictionary = _json.load(json_file)
 
     def reset_charge_dictionary(self):
         """ reset the charge dictionary by replacing with an empty one """

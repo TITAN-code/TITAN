@@ -1,4 +1,5 @@
-from titan.myimports import *
+import os as _os
+import math as _math
 
 class ChargeDistribution():
     """
@@ -70,13 +71,13 @@ class ChargeDistribution():
                                                    point_charge[1], point_x, point_y, point_z)
             else:
                 print("ERROR: UNIT NEEDS TO BE ANS OR BOHR!")
-                os.exit()
+                _os.exit()
 
             efx_tot += efx
             efy_tot += efy
             efz_tot += efz
 
-        ef_tot = math.sqrt(efx_tot**2 + efy_tot**2 + efz_tot**2)
+        ef_tot = _math.sqrt(efx_tot**2 + efy_tot**2 + efz_tot**2)
 
         return efx_tot, efy_tot, efz_tot, ef_tot
 
@@ -85,7 +86,7 @@ class ChargeDistribution():
         calculates the value of the electric field at (point_x, point_y, point_z) exerted by the charge at (x, y, z)
         """
         k = 1.00  # the coulomb force constant
-        distance = math.sqrt((x - point_x) ** 2 + (y - point_y) ** 2 + (z - point_z) ** 2)
+        distance = _math.sqrt((x - point_x) ** 2 + (y - point_y) ** 2 + (z - point_z) ** 2)
         distance = distance / 0.529177249
 
         dx = (x - point_x) / 0.529177249
@@ -107,7 +108,7 @@ class ChargeDistribution():
         calculates the value of the electric field at (point_x, point_y, point_z)  exerted by the charge at (x, y, z)
         """
         k = 1.00  # the coulomb force constant
-        distance = math.sqrt((x - point_x) ** 2 + (y - point_y) ** 2 + (z - point_z) ** 2)
+        distance = _math.sqrt((x - point_x) ** 2 + (y - point_y) ** 2 + (z - point_z) ** 2)
 
         dx = (x - point_x)
         dy = (y - point_y)
@@ -126,7 +127,7 @@ class ChargeDistribution():
     def projvU(self, efx, efy, efz, vector_x, vector_y, vector_z):
         """ projects efx, efy, efz on the (vector_x, vector_y, vector_z)-direction """
         vU = vector_x * efx + vector_y * efy + vector_z * efz
-        mag_v = math.sqrt(vector_x ** 2 + vector_y ** 2 + vector_z ** 2)
+        mag_v = _math.sqrt(vector_x ** 2 + vector_y ** 2 + vector_z ** 2)
         proj = vU / mag_v
 
         return proj

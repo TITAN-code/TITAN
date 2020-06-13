@@ -1,6 +1,9 @@
-import titan.general_charge_distribution_class as general
-import titan.header as header
-from titan.myimports import *
+import titan._general_charge_distribution_class as _general
+import titan._header as _header
+import sys as _sys
+import math as _math
+
+__all__ = ['DifferentialDistributionCalculation']
 
 class DifferentialDistributionCalculation:
     """
@@ -23,7 +26,7 @@ class DifferentialDistributionCalculation:
         self.distribution1 = distribution1
         self.distribution2 = distribution2
 
-        self.differential_distribution = general.ChargeDistribution()
+        self.differential_distribution = _general.ChargeDistribution()
 
     def construct_differential_distribution(self):
         """ constructs the differential distribution from distribution1 and distribution2 """
@@ -55,7 +58,7 @@ class DifferentialDistributionCalculation:
                 self.differential_distribution.point_charge_list.append(self.distribution2.point_charge_list[i])
 
     def determine_distance(self, i, j):
-        distance = math.sqrt(
+        distance = _math.sqrt(
             (self.distribution2.point_charge_list[i][0][0] -
              self.differential_distribution.point_charge_list[j][0][0])**2 + \
              (self.distribution2.point_charge_list[i][0][1] -
@@ -92,16 +95,16 @@ class DifferentialDistributionCalculation:
 if __name__ == '__main__':
 
     # Get Input
-    if len(sys.argv[1:]) == 3:
-        txt_name1 = sys.argv[1]
-        txt_name2 = sys.argv[2]
-        output_name = sys.argv[3]
+    if len(_sys.argv[1:]) == 3:
+        txt_name1 = _sys.argv[1]
+        txt_name2 = _sys.argv[2]
+        output_name = _sys.argv[3]
 
         #execute the stand-alone calculation
-        header.header_command_line()
+        _header.header_command_line()
         try:
-            distribution1 = general.ChargeDistribution()
-            distribution2 = general.ChargeDistribution()
+            distribution1 = _general.ChargeDistribution()
+            distribution2 = _general.ChargeDistribution()
             differential = DifferentialDistributionCalculation(distribution1, distribution2)
             differential.import_point_charges_from_txt_file(distribution1, txt_name1)
             differential.import_point_charges_from_txt_file(distribution2, txt_name2)
@@ -110,8 +113,8 @@ if __name__ == '__main__':
             print("MAKE SURE THE RESPECTIVE FILE NAMES WERE CORRECTLY PROVIDED IN THE INPUT LINE")
             print("(WITHOUT THE .txt EXTENSION)")
             print(" ")
-            header.error_command_line()
-            sys.exit()
+            _header.error_command_line()
+            _sys.exit()
 
         try:
             differential.construct_differential_distribution()
@@ -119,11 +122,11 @@ if __name__ == '__main__':
         except:
             print("AN ERROR OCCURRED WHILE CONSTRUCTING THE DIFFERENTIAL DISTRIBUTION")
             print(" ")
-            header.error_command_line()
-            sys.exit()
+            _header.error_command_line()
+            _sys.exit()
         print(" THE DIFFERENTIAL CHARGE DISTRIBUTION HAS BEEN CONSTRUCTED SUCCESSFULLY")
         print(" ")
-        header.conclusion_command_line()
+        _header.conclusion_command_line()
 
     else:
         print('ERROR: Wrong input')

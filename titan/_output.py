@@ -1,4 +1,3 @@
-from titan.myimports import *
 
 def amberlib_cpc(name,charge):
     """ generate *.lib for amber output """

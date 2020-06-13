@@ -1,4 +1,4 @@
-from titan.myimports import *
+import datetime as _datetime
 
 def header_command_line():
     print ("                                                                 ")
@@ -16,13 +16,13 @@ def header_command_line():
 def conclusion_command_line():
     print ("****************************************************************** ")
     print ("                                                                 ")
-    print ("NORMAL TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    print ("NORMAL TERMINATION OF TITAN AT " + str(_datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     print ("                                                                 ")
 
 def error_command_line():
     print ("****************************************************************** ")
     print ("                                                                 ")
-    print ("ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    print ("ERROR TERMINATION OF TITAN AT " + str(_datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     print ("                                                                 ")
 
 def header_output_file(f1):
@@ -43,11 +43,11 @@ def header_output_file(f1):
 def conclusion_output_file(f1):
     f1.write("****************************************************************** \n")
     f1.write("                                                                \n")
-    f1.write("NORMAL TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    f1.write("NORMAL TERMINATION OF TITAN AT " + str(_datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     f1.write("                                                                \n")
 
 def error_output_file(f1):
     f1.write("****************************************************************** \n")
     f1.write("                                                                \n")
-    f1.write("ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+    f1.write("ERROR TERMINATION OF TITAN AT " + str(_datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
     f1.write("                                                                 \n")

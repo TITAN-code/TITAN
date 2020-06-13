@@ -1,6 +1,5 @@
-import titan.general_charge_distribution_class as general
-import titan.header as header
-from titan.myimports import *
+import titan._general_charge_distribution_class as _general
+import titan._header as _header
 
 class Quantification():
     """
@@ -59,8 +58,8 @@ class Quantification():
 
         self.vector_x, self.vector_y, self.vector_z = self.construct_vector()
 
-        self.charge_distribution_to_quantify = general.ChargeDistribution()
-        self.full_charge_distribution = general.ChargeDistribution()
+        self.charge_distribution_to_quantify = _general.ChargeDistribution()
+        self.full_charge_distribution = _general.ChargeDistribution()
 
     def execute(self):
         """
@@ -92,7 +91,7 @@ class Quantification():
     def write_output_quantification_calculation(self, efx, efy, efz, ef_tot, oef):
         """ write output of quantification calculation to .ef file """
         f1 = open(self.name + ".ef", "w", encoding="utf-8")
-        header.header_output_file(f1)
+        _header.header_output_file(f1)
         f1.write(" \n")
         f1.write(" \n")
         f1.write("-----------------------------------------------------------\n")
@@ -154,5 +153,5 @@ class Quantification():
         f1.write(" THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN QUANTIFIED\n")
         f1.write(" \n")
         f1.write(" \n")
-        header.conclusion_output_file(f1)
+        _header.conclusion_output_file(f1)
         f1.close()

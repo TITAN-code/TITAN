@@ -1,7 +1,10 @@
-from titan.quantification import Quantification
-from titan.myimports import *
+from titan._quantification import Quantification as _Quantification
+import os as _os
+import json as _json
 
-class QuantificationPdb(Quantification):
+#__all__ = ['QuantificationPdbAmber','QuantificationPdbCharmm']
+
+class QuantificationPdb(_Quantification):
     """
     A class that represents a quantification calculation starting from a .pdb file
 
@@ -48,7 +51,7 @@ class QuantificationPdb(Quantification):
     """
     def __init__(self, name, point_x, point_y, point_z, v1_x, v1_y, v1_z, v2_x, v2_y, v2_z,
                    n_terminal, c_terminal, charge_seq="/", charge_select="ALL", unit="ANS"):
-        Quantification.__init__(self, name, point_x, point_y, point_z, v1_x, v1_y, v1_z, v2_x, v2_y, v2_z, charge_seq,
+        _Quantification.__init__(self, name, point_x, point_y, point_z, v1_x, v1_y, v1_z, v2_x, v2_y, v2_z, charge_seq,
                    charge_select, unit)
         self.n_terminal = n_terminal
         self.c_terminal = c_terminal
@@ -132,9 +135,9 @@ class QuantificationPdbAmber(QuantificationPdb):
         """ read and extract the content of the .pdb file """
         pdb_content = self.import_content_from_pdb_input()
 
-        library_path = os.path.dirname(os.path.realpath(__file__))
+        library_path = _os.path.dirname(_os.path.realpath(__file__))
         with open(str(library_path) + "/amber_library.json", "r", encoding="utf-8") as json_file:
-            amber_library = json.load(json_file)
+            amber_library = _json.load(json_file)
 
         counter = 0
         for line_list in pdb_content:
@@ -236,9 +239,9 @@ class QuantificationPdbCharmm(QuantificationPdb):
         """ read and extract the content of the .pdb file """
         pdb_content = self.import_content_from_pdb_input()
 
-        library_path = os.path.dirname(os.path.realpath(__file__))
+        library_path = _os.path.dirname(_os.path.realpath(__file__))
         with open(str(library_path) + "/charmm_library.json", "r", encoding="utf-8") as json_file:
-            charmm_library = json.load(json_file)
+            charmm_library = _json.load(json_file)
 
         counter = 0
         for line_list in pdb_content:

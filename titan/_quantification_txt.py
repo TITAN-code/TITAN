@@ -1,7 +1,8 @@
-from titan.quantification import Quantification
-from titan.myimports import *
+from titan._quantification import Quantification as _Quantification
 
-class QuantificationTxt(Quantification):
+#__all__ = ['QuantificationTxt']
+
+class QuantificationTxt(_Quantification):
     """
     A class that represents a quantification calculation starting from a .txt file
 
@@ -42,7 +43,7 @@ class QuantificationTxt(Quantification):
     """
     def __init__(self, name, point_x, point_y, point_z, v1_x, v1_y, v1_z, v2_x, v2_y, v2_z, charge_seq="/",
                    charge_select="ALL", unit="ANS"):
-        Quantification.__init__(self, name, point_x, point_y, point_z, v1_x, v1_y, v1_z, v2_x, v2_y, v2_z, charge_seq,
+        _Quantification.__init__(self, name, point_x, point_y, point_z, v1_x, v1_y, v1_z, v2_x, v2_y, v2_z, charge_seq,
                    charge_select, unit)
 
     def execute(self):

@@ -1,4 +1,5 @@
-from titan.myimports import *
+import sys as _sys
+import datetime as _datetime
 
 class InputReader:
     def __init__(self, filename):
@@ -283,5 +284,5 @@ class InputReader:
         """ message shown in terminal in case keywords were not retrieved correctly. """
         print ("ERROR: INVALID/INSUFFICIENT KEYWORDS in " + self.filename)
         print (" ")
-        print (" ----- ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + " -----")
-        sys.exit()
+        print (" ----- ERROR TERMINATION OF TITAN AT " + str(_datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + " -----")
+        _sys.exit()

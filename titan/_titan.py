@@ -1,12 +1,12 @@
-from myimports import *
-import input as input
-import header as header
-import circular_generate as circ
-import spiral_line_generate as sl
-import quantification_txt as quant_txt
-import quantification_pdb as quant_pdb
-import quantification_log as quant_log
-import processing as processing
+import sys as _sys
+import _input as _input
+import _header as _header
+import _circular_generate as circ
+import _spiral_line_generate as sl
+import _quantification_txt as quant_txt
+import _quantification_pdb as quant_pdb
+import _quantification_log as quant_log
+import _processing as _processing
 
 def titan(filename):
     """ The main function """
@@ -18,12 +18,12 @@ def titan(filename):
         sl_execute(input_reader)
     elif input_reader.type == "QUANT":
         quant_execute(input_reader)
-    header.conclusion_command_line()
+    _header.conclusion_command_line()
 
 def setup_input_reader(filename):
     """ sets up an instance of the input_reader """
-    header.header_command_line()
-    input_reader = input.InputReader(filename)
+    _header.header_command_line()
+    input_reader = _input.InputReader(filename)
     input_reader.determine_type()
 
     return input_reader
@@ -58,25 +58,25 @@ def quant_execute(input_reader):
             quantification_amber = quant_pdb.QuantificationPdbAmber(name, point_x, point_y, point_z, v1x, v1y, v1z,
                                 v2x, v2y, v2z, n_terminal, c_terminal, charge_seq, charge_select, unit)
             quantification_amber.execute()
-            processing.write_command_line_quant_pdb(name)
+            _processing.write_command_line_quant_pdb(name)
         if force_field.upper() == "CHARMM":
             aspp, glup, disu = input_reader.read_input_charmm()
             quantification_charmm = quant_pdb.QuantificationPdbCharmm(name, point_x, point_y, point_z, v1x, v1y, v1z,
                         v2x, v2y, v2z, n_terminal, c_terminal, charge_seq, charge_select, unit, aspp, glup, disu)
             quantification_charmm.execute()
-            processing.write_command_line_quant_pdb(name)
+            _processing.write_command_line_quant_pdb(name)
     if file_type == "LOG":
         quantification_log = quant_log.QuantificationLog(name, point_x, point_y, point_z, v1x, v1y, v1z, v2x,
                                                          v2y, v2z, charge_seq, charge_select, unit)
         quantification_log.execute()
-        processing.write_command_line_quant_log(name)
+        _processing.write_command_line_quant_log(name)
 # ----------------------------------------------------
 # Main
 if __name__ == '__main__':
     
     # Get Input
-    if len(sys.argv[1:]) == 1:
-        filename = sys.argv[1]
+    if len(_sys.argv[1:]) == 1:
+        filename = _sys.argv[1]
         titan(filename)
     else:
         print('ERROR: Wrong input')

@@ -1,8 +1,7 @@
-import titan.output as output
-from titan.general_charge_distribution_class import ChargeDistribution
-from titan.myimports import *
+import titan._output as _output
+from titan._general_charge_distribution_class import ChargeDistribution as _ChargeDistribution
 
-class ChargeDistributionGenerate(ChargeDistribution):
+class ChargeDistributionGenerate(_ChargeDistribution):
     """
      An abstract class that represents a charge distribution constructed during a generation calculation.
 
@@ -14,7 +13,7 @@ class ChargeDistributionGenerate(ChargeDistribution):
      """
 
     def __init__(self):
-        ChargeDistribution.__init__(self)
+        _ChargeDistribution.__init__(self)
 
     def update_charges(self,new_charge):
         for point_charge in self.point_charge_list:
@@ -79,9 +78,9 @@ class ChargeDistributionCpc(ChargeDistributionGenerate):
                     self.point_charge_list[i][0][0], self.point_charge_list[i][0][1], self.point_charge_list[i][0][2]))
         output_file.write("END")
 
-        output.amberlib_cpc(name, self.point_charge_list[0][1])
-        output.amberfrcmod_cpc(name)
-        output.amberleapin_cpc(name)
+        _output.amberlib_cpc(name, self.point_charge_list[0][1])
+        _output.amberfrcmod_cpc(name)
+        _output.amberleapin_cpc(name)
 
     def charmm_write_point_charges(self, output_file):
         """

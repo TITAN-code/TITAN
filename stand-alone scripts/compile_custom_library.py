@@ -1,5 +1,5 @@
 import json
-from titan.myimports import *
+import sys
 
 class Library():
     """

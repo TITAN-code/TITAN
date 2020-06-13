@@ -1,12 +1,7 @@
-from titan import general_charge_distribution_class as general
-from titan import circular_generate as circ
-from titan import spiral_line_generate as sl
-from titan import quantification_txt as quant_txt
-from titan import quantification_pdb as quant_pdb
-from titan import quantification_log as quant_log
-from titan import header as header
-from titan import input as input
-from titan.myimports import *
+from titan import _general_charge_distribution_class as general
+from titan import _header as header
+import math
+import sys
 
 class DifferentialDistributionCalculation:
     """

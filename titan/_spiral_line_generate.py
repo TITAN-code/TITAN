@@ -1,6 +1,10 @@
-import titan.header as header
-from titan.charge_distribution_class_gen import ChargeDistributionSl
-from titan.myimports import *
+import titan._header as _header
+from titan._charge_distribution_class_gen import ChargeDistributionSl as _ChargeDistributionSl
+import os as _os
+import math as _math
+import datetime as _datetime
+
+#__all__ = ['SpiralLineGenerate']
 
 class SpiralLineGenerate():
     """
@@ -55,7 +59,7 @@ class SpiralLineGenerate():
         self.point_Z = point_Z
         self.unit = unit
 
-        self.charge_distribution_sl = ChargeDistributionSl()
+        self.charge_distribution_sl = _ChargeDistributionSl()
 
     def create_spiral_line_distribution(self):
         """
@@ -109,8 +113,8 @@ class SpiralLineGenerate():
         for i in iter:
             for j in range(1, self.fatom + 1):
                 k = self.fatom * i + j - self.fatom - 1
-                b = math.cos(theta)
-                c = math.sin(theta)
+                b = _math.cos(theta)
+                c = _math.sin(theta)
 
                 x = self.radius * b
                 y = self.radius * c
@@ -139,9 +143,9 @@ class SpiralLineGenerate():
         for i in iter:
             for j in range(1,self.fatom+1):
                 (type_a, type_r, charge_a) = self.frag(self.sequence[i-1], j, self.charge)
-                k = self.fatom*i +j - self.fatom - 1
-                b = math.cos(theta)
-                c = math.sin(theta)
+                k = self.fatom*i + j - self.fatom - 1
+                b = _math.cos(theta)
+                c = _math.sin(theta)
 
                 x = self.radius * b - x_arg
                 y = self.radius * c - y_arg
@@ -162,9 +166,9 @@ class SpiralLineGenerate():
         Updates theta according to whether the spiral line is right- or left-handed
         """
         if self.chirality.upper() == "RIGHT-HAND":
-            theta += (2 * math.pi) / self.N
+            theta += (2 * _math.pi) / self.N
         elif self.chirality.upper() == "LEFT-HAND":
-            theta -= (2 * math.pi) / self.N
+            theta -= (2 * _math.pi) / self.N
 
         return theta
 
@@ -201,24 +205,24 @@ class SpiralLineGenerate():
         else:
             print("ERROR: INVALID FRAGMENT IN THE SEQUENCE! \n")
             print("FRAGMENTS SHOULD BE EITHER \"N\" OR \"P\"")
-            print("ERROR TERMINATION OF TITAN AT " + str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+            print("ERROR TERMINATION OF TITAN AT " + str(_datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
             print("\n                                                                 ")
-            os.exit()
+            _os.exit()
 
         return (type_a, type_r, charge)
 
     def move_output(self):
         """ move output to the right location """
-        file = os.getcwd()
+        file = _os.getcwd()
         path = file + "/GAUSSIAN_FORMAT_SL"
         self.check_directory(path)
         self.move_gauss()
 
     def check_directory(self, directory):
         """ creates the directory if it doesn't already exist """
-        check = os.path.exists(directory)
+        check = _os.path.exists(directory)
         if not check:
-            os.makedirs(directory)
+            _os.makedirs(directory)
 
     def move_gauss(self):
         """ moves the output to ./GAUSSIAN_FORMAT_CPC """
@@ -228,16 +232,16 @@ class SpiralLineGenerate():
         dent_info = "./GAUSSIAN_FORMAT_SL/" + info
         dent_pdb = "./GAUSSIAN_FORMAT_SL/" + pdb
         dent_txt = "./GAUSSIAN_FORMAT_SL/" + txt
-        os.rename(info, dent_info)
-        os.rename(pdb, dent_pdb)
-        os.rename(txt, dent_txt)
+        _os.rename(info, dent_info)
+        _os.rename(pdb, dent_pdb)
+        _os.rename(txt, dent_txt)
 
     def summary(self, efx, efy, efz, ef_tot, pitch, number_of_charges):
         """
         Writes the summary of the calculation to the .info output-file
         """
         f2 = open(self.name + ".info", "w", encoding="utf-8")
-        header.header_output_file(f2)
+        _header.header_output_file(f2)
         f2.write(" \n")
         f2.write(" \n")
         f2.write(" \n")
@@ -346,5 +350,5 @@ class SpiralLineGenerate():
         f2.write(" \n")
         f2.write(" THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. \n")
         f2.write(" \n")
-        header.conclusion_output_file(f2)
+        _header.conclusion_output_file(f2)
         f2.close()

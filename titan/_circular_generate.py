@@ -1,6 +1,9 @@
-import titan.header as header
-from titan.charge_distribution_class_gen import ChargeDistributionCpc
-from titan.myimports import *
+import titan._header as _header
+from titan._charge_distribution_class_gen import ChargeDistributionCpc as _ChargeDistributionCpc
+import os as _os
+import math as _math
+
+#__all__ = ['CircularGenerate']
 
 class CircularGenerate():
     """
@@ -50,7 +53,7 @@ class CircularGenerate():
 
         self.V_X, self.V_Y, self.V_Z, self.unit_vector = self.initialize_vector()
 
-        self.charge_distribution_cpc = ChargeDistributionCpc()
+        self.charge_distribution_cpc = _ChargeDistributionCpc()
 
     def create_and_write_plates(self, out_format):
         """
@@ -119,7 +122,7 @@ class CircularGenerate():
 
         for i in iter:  # Construct every subsequent ring of point_charges
             A1 = 0.5 / float(i)
-            N1 = math.pi / (math.asin(A1))  # Number of point_charges in ring i
+            N1 = _math.pi / (_math.asin(A1))  # Number of point_charges in ring i
             N2 = int(N1) + 1
             theta = 0.00
             iter2 = range(1, N2 + 1)
@@ -141,7 +144,7 @@ class CircularGenerate():
                     self.determine_point_charge_positions_on_ring(j, X, Y, Z, BX, BY, BZ, X0, Y0, Z0, X1, Y1, Z1)
 
                 # Update the angle
-                theta += (2.0 * math.pi) / float(N2)
+                theta += (2.0 * _math.pi) / float(N2)
 
                 # Store point in charge distribution
                 self.charge_distribution_cpc.append_point_charge(X[j - 1], Y[j - 1], Z[j - 1],
@@ -153,20 +156,20 @@ class CircularGenerate():
         make up the plate. The first three cases are the numerically difficult cases, the final one is the regular case.
         """
 
-        if math.fabs(self.unit_vector[0]) < 0.0000001:
+        if _math.fabs(self.unit_vector[0]) < 0.0000001:
             V_X1 = 1.000
             V_Y1 = 0.000
             V_Z1 = 0.000
-        elif math.fabs(self.unit_vector[1]) < 0.0000001:
+        elif _math.fabs(self.unit_vector[1]) < 0.0000001:
             V_X1 = 0.000
             V_Y1 = 1.000
             V_Z1 = 0.000
-        elif math.fabs(self.unit_vector[2]) < 0.0000001:
+        elif _math.fabs(self.unit_vector[2]) < 0.0000001:
             V_X1 = 0.000
             V_Y1 = 0.000
             V_Z1 = 1.000
         else:
-            M = math.sqrt(self.unit_vector[0] ** 2 / (self.unit_vector[1] ** 2 + self.unit_vector[2] ** 2))
+            M = _math.sqrt(self.unit_vector[0] ** 2 / (self.unit_vector[1] ** 2 + self.unit_vector[2] ** 2))
             V_X1 = ((1.00) / M) * self.unit_vector[0]
             V_Y1 = (-1.00) * M * self.unit_vector[1]
             V_Z1 = (-1.00) * M * self.unit_vector[2]
@@ -181,52 +184,52 @@ class CircularGenerate():
         the subsequent conditionals treat numerically problematic cases.
         """
 
-        if math.fabs(self.V_X) > 0.00000001 and math.fabs(self.V_Y) > 0.00000001 \
-                and math.fabs(self.V_Z) > 0.00000001:
+        if _math.fabs(self.V_X) > 0.00000001 and _math.fabs(self.V_Y) > 0.00000001 \
+                and _math.fabs(self.V_Z) > 0.00000001:
             X[j - 1] = BX;
             Y[j - 1] = BY;
             Z[j - 1] = -1.0 * (self.V_X / self.V_Z) * (X[j - 1] - X0) - 1.0 * \
                               (self.V_Y / self.V_Z) * (Y[j - 1] - Y0) + Z0
-        elif math.fabs(self.V_X) > 0.00000001 and math.fabs(self.V_Y) > 0.00000001 \
-                and math.fabs(self.V_Z) < 0.00000001:
+        elif _math.fabs(self.V_X) > 0.00000001 and _math.fabs(self.V_Y) > 0.00000001 \
+                and _math.fabs(self.V_Z) < 0.00000001:
             X[j - 1] = BX;
             Y[j - 1] = -1.0 * (self.V_X / self.V_Y) * (X[j - 1] - X0) + Y0;
             Z[j - 1] = BZ
-        elif math.fabs(self.V_X) > 0.00000001 and math.fabs(self.V_Y) < 0.00000001 \
-                and math.fabs(self.V_Z) > 0.00000001:
+        elif _math.fabs(self.V_X) > 0.00000001 and _math.fabs(self.V_Y) < 0.00000001 \
+                and _math.fabs(self.V_Z) > 0.00000001:
             X[j - 1] = BX;
             Y[j - 1] = BY;
             Z[j - 1] = -1.0 * (self.V_X / self.V_Z) * (X[j - 1] - X0) + Z0
-        elif math.fabs(self.V_X) < 0.00000001 and math.fabs(self.V_Y) > 0.00000001 \
-                and math.fabs(self.V_Z) > 0.00000001:
+        elif _math.fabs(self.V_X) < 0.00000001 and _math.fabs(self.V_Y) > 0.00000001 \
+                and _math.fabs(self.V_Z) > 0.00000001:
             X[j - 1] = BX;
             Y[j - 1] = BY;
             Z[j - 1] = -1.0 * (self.V_Y / self.V_Z) * (Y[j - 1] - Y0) + Z0
-        elif math.fabs(self.V_X) < 0.00000001 and math.fabs(self.V_Y) < 0.00000001 \
-                and math.fabs(self.V_Z) > 0.00000001:
+        elif _math.fabs(self.V_X) < 0.00000001 and _math.fabs(self.V_Y) < 0.00000001 \
+                and _math.fabs(self.V_Z) > 0.00000001:
             X[j - 1] = BX;
             Y[j - 1] = BY;
             Z[j - 1] = Z1
-        elif math.fabs(self.V_X) < 0.00000001 and math.fabs(self.V_Y) > 0.00000001 \
-                and math.fabs(self.V_Z) < 0.00000001:
+        elif _math.fabs(self.V_X) < 0.00000001 and _math.fabs(self.V_Y) > 0.00000001 \
+                and _math.fabs(self.V_Z) < 0.00000001:
             X[j - 1] = BX;
             Y[j - 1] = Y1;
             Z[j - 1] = BZ
-        elif math.fabs(self.V_X) > 0.00000001 and math.fabs(self.V_Y) < 0.00000001 \
-                and math.fabs(self.V_Z) < 0.00000001:
+        elif _math.fabs(self.V_X) > 0.00000001 and _math.fabs(self.V_Y) < 0.00000001 \
+                and _math.fabs(self.V_Z) < 0.00000001:
             X[j - 1] = X1;
             Y[j - 1] = BY;
             Z[j - 1] = BZ
         else:
             print ("ERROR INPUT FOR THE COORDINATES OF \"POINT1\" AND \"POINT2\". ")
             print ("\"POIN1\" AND \"POINT2\" ARE THE SAME. ")
-            os.exit()
+            _os.exit()
 
         return X[j - 1], Y[j - 1], Z[j - 1]
 
     def normalize_vector(self, u, v, w):
         """ Generates a unit vector from an unnormalized (u, v, w) vector """
-        l = math.sqrt(u**2 + v**2 + w**2)
+        l = _math.sqrt(u**2 + v**2 + w**2)
         u_normalized = u/l
         v_normalized = v/l
         w_normalized = w/l
@@ -241,8 +244,8 @@ class CircularGenerate():
         u = self.unit_vector[0]
         v = self.unit_vector[1]
         w = self.unit_vector[2]
-        cost = math.cos(theta)
-        sint = math.sin(theta)
+        cost = _math.cos(theta)
+        sint = _math.sin(theta)
         onemcost = 1.0 - cost
 
         # construct rotation matrix m
@@ -271,7 +274,7 @@ class CircularGenerate():
 
     def move_output(self, outformat):
         """ move output to right location """
-        file = os.getcwd()
+        file = _os.getcwd()
         if outformat == "CHARMM":
             path = file + "/CHARMM_FORMAT_CPC"
             self.check_directory(path)
@@ -288,13 +291,13 @@ class CircularGenerate():
             print ("FATAL ERROR. WRONG INPUT FOR \"OUTFORMAT\". ")
             print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" % (outformat))
             print ("PLEASE SET \"OUTFORMAT\" TO \"CHARMM\" OR \"AMBER\"")
-            os.exit()
+            _os.exit()
 
     def check_directory(self, directory):
         """ creates the directory if it doesn't already exist """
-        check = os.path.exists(directory)
+        check = _os.path.exists(directory)
         if not check:
-            os.makedirs(directory)
+            _os.makedirs(directory)
 
     def move_charmm(self):
         """ moves the output to ./CHARMM_FORMAT_CPC """
@@ -302,8 +305,8 @@ class CircularGenerate():
         pdb = self.name + ".pdb"
         dent_info = "./CHARMM_FORMAT_CPC/" + info
         dent_pdb = "./CHARMM_FORMAT_CPC/" + pdb
-        os.rename(info, dent_info)
-        os.rename(pdb, dent_pdb)
+        _os.rename(info, dent_info)
+        _os.rename(pdb, dent_pdb)
 
     def move_amber(self):
         """ moves the output to ./AMBER_FORMAT_CPC """
@@ -318,11 +321,11 @@ class CircularGenerate():
         dent_frcmod = "./AMBER_FORMAT_CPC/" + frcmod
         dent_leapin = "./AMBER_FORMAT_CPC/" + leapin
         #
-        os.rename(info, dent_info)
-        os.rename(pdb, dent_pdb)
-        os.rename(lib, dent_lib)
-        os.rename(frcmod, dent_frcmod)
-        os.rename(leapin, dent_leapin)
+        _os.rename(info, dent_info)
+        _os.rename(pdb, dent_pdb)
+        _os.rename(lib, dent_lib)
+        _os.rename(frcmod, dent_frcmod)
+        _os.rename(leapin, dent_leapin)
 
     def move_gaussian_cpc(self):
         """ moves the output to ./GAUSSIAN_FORMAT_CPC """
@@ -330,15 +333,15 @@ class CircularGenerate():
         txt = self.name + ".txt"
         dent_info = "./GAUSSIAN_FORMAT_CPC/" + info
         dent_txt = "./GAUSSIAN_FORMAT_CPC/" + txt
-        os.rename(info, dent_info)
-        os.rename(txt, dent_txt)
+        _os.rename(info, dent_info)
+        _os.rename(txt, dent_txt)
 
     def summary(self, out_format, final_charge, count):
         """
         Writes the summary of the calculation to the .info output-file
         """
         f2 = open(self.name +".info", "w", encoding="utf-8")
-        header.header_output_file(f2)
+        _header.header_output_file(f2)
         f2.write(" \n")
         f2.write(" \n")
         f2.write(" \n")
@@ -421,7 +424,7 @@ class CircularGenerate():
             pass
         else:
             print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT" % (out_format))
-            os.exit()
+            _os.exit()
         f2.write(" \n")
         f2.write("------------------------------------------------------------------ \n")
         f2.write("                              SUMMARY: \n")
@@ -445,5 +448,5 @@ class CircularGenerate():
         f2.write(" \n")
         f2.write(" THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. \n")
         f2.write(" \n")
-        header.conclusion_output_file(f2)
+        _header.conclusion_output_file(f2)
         f2.close()

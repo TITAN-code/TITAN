@@ -1,4 +1,4 @@
-from titan.myimports import *
+import os as _os
 
 def print_commandline_cpc(name, outformat):
     """ print output in command line """
@@ -58,7 +58,7 @@ def print_commandline_cpc(name, outformat):
         print ("FATAL ERROR. WRONG INPUT FOR \"OUTFORMAT\". ")
         print (" THE %.10s FORMAT FOR UNIFORM EEF GENERATION IS UNDER DEVELOPMENT"%(outformat))
         print ("PLEASE SET \"OUTFORMAT\" TO \"CHARMM\" , \"AMBER\" OR \"GAUSSIAN\"")
-        os.exit()
+        _os.exit()
     print (" ")
     print (" ")
     print (" THE ELECTRIC FIELD HAS SUCCESSFULLY BEEN GENERATED.")

@@ -15,11 +15,11 @@ class ChargeDistributionGenerate(_ChargeDistribution):
     def __init__(self):
         _ChargeDistribution.__init__(self)
 
-    def update_charges(self,new_charge):
+    def update_charges(self, new_charge):
         for point_charge in self.point_charge_list:
             if point_charge[1] > 0:
                 point_charge[1] = new_charge
-            if point_charge[1] < 0:
+            elif point_charge[1] < 0:
                 point_charge[1] = - new_charge
 
     def gaussian_write_point_charges(self, output_file):

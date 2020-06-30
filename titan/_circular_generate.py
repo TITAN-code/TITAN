@@ -3,8 +3,6 @@ from titan._charge_distribution_class_gen import ChargeDistributionCpc as _Charg
 import os as _os
 import math as _math
 
-#__all__ = ['CircularGenerate']
-
 class CircularGenerate():
     """
     A class to represent a uniform field generation with the help of circular plates
@@ -222,7 +220,7 @@ class CircularGenerate():
             Z[j - 1] = BZ
         else:
             print ("ERROR INPUT FOR THE COORDINATES OF \"POINT1\" AND \"POINT2\". ")
-            print ("\"POIN1\" AND \"POINT2\" ARE THE SAME. ")
+            print ("\"POINT1\" AND \"POINT2\" ARE THE SAME. ")
             _os.exit()
 
         return X[j - 1], Y[j - 1], Z[j - 1]

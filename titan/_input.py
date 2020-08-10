@@ -149,7 +149,7 @@ class InputReader:
                 v2z = line[2]
             if line[0].upper() == "POINT_X":
                 point_x = line[2]
-            if line[0].upper() == "POINT_X":
+            if line[0].upper() == "POINT_Y":
                 point_y = line[2]
             if line[0].upper() == "POINT_Z":
                 point_z = line[2]

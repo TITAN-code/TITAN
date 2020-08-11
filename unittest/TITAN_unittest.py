@@ -2,6 +2,7 @@ import math as math
 import titan
 from titan import _general_charge_distribution_class as general
 from titan import _charge_distribution_class_gen as gen
+from titan import _quantification_txt as quant_txt
 from titan import _input as input
 import unittest
 
@@ -168,6 +169,12 @@ class TestExamples(unittest.TestCase):
                                                                                vector_y, vector_z, "ANS")
         self.assertAlmostEqual(oef, 0.002500, 3)
 
+    def test_example_CPC_alt(self):
+        input_reader = input.InputReader("examples/example_CPC_alt/TITAN_CPC.inp")
+        R, N, distance, field_strength, name, out_format, point1_X, point1_Y, point1_Z, point2_X, point2_Y, point2_Z, \
+        unit = input_reader.read_input_cpc()
+        self.assertAlmostEqual((point1_X,point1_Y,point1_Z), (0.0,1.0,2.0),1)
+
     def test_example_SL(self):
         input_reader = input.InputReader("examples/example_SL/TITAN_SL.inp")
         radius, N, step, chirality, name, fatom, sequence, charge, point_X, point_Y, point_Z, unit = \
@@ -180,6 +187,12 @@ class TestExamples(unittest.TestCase):
         self.assertAlmostEqual(efx, -0.000561, 6)
         self.assertAlmostEqual(efy, 0.003331, 6)
         self.assertAlmostEqual(efz, 0.001549, 6)
+
+    def test_example_SL_alt(self):
+        input_reader = input.InputReader("examples/example_SL_alt/TITAN_SL.inp")
+        radius, N, step, chirality, name, fatom, sequence, charge, point_X, point_Y, point_Z, unit = \
+            input_reader.read_input_sl()
+        self.assertAlmostEqual((point_X,point_Y,point_Z), (0.0,1.0,2.0),1)
 
     def test_example_quant_direction(self):
         input_reader = input.InputReader("examples/example_QUANT_DIRECTION/TITAN_QUANTIFICATION_DIRECTION.inp")
@@ -196,6 +209,18 @@ class TestExamples(unittest.TestCase):
         oef = quantification_charmm.charge_distribution_to_quantify.calculate_oriented_electric_field(point_x,
                                             point_y, point_z, vector_x, vector_y, vector_z, "ANS")
         self.assertAlmostEqual(oef, -0.0211101298, 6)
+
+    def test_example_quant_direction_alt_point(self):
+        input_reader = input.InputReader("examples/example_QUANT_TXT_alt_point/TITAN_QUANTIFICATION_txt.inp")
+        unit, file_type, name, charge_select, charge_seq, direction, v1x, v1y, v1z, v2x, v2y, v2z, \
+                    point_x, point_y, point_z = input_reader.read_input_quantification()
+        quantification_txt = quant_txt.QuantificationTxt(name, point_x, point_y, point_z, v1x, v1y, v1z, v2x, v2y, v2z,
+                                                         charge_seq, charge_select, unit)
+        quantification_txt.execute()
+        (vector_x, vector_y, vector_z) = (v2x - v1x, v2y - v1y, v2z - v1z)
+        oef = quantification_txt.charge_distribution_to_quantify.calculate_oriented_electric_field(point_x,
+                                            point_y, point_z, vector_x, vector_y, vector_z, "ANS")
+        self.assertAlmostEqual(oef, 0.0025025112933224816, 6)
 
     def test_example_quant_log(self):
         input_reader = input.InputReader("examples/example_QUANT_LOG/TITAN_QUANTIFICATION_LOG.inp")

@@ -62,7 +62,7 @@
 ------------------------------------------------------------------ 
  
  
- THE EXTERNAL CHARGES ARE AVAILABLE IN sl_test.txt FILE. 
+ THE EXTERNAL CHARGES ARE AVAILABLE IN chrg.txt FILE. 
  PLEASE USE "CHARGE" KEYWORDS IN GAUSSIAN 09 CALCULATION. 
  
  FORMAT: 
@@ -70,7 +70,7 @@
  
  
  IF YOU WANT TO VISUALIZE THE SPIRAL LINE CHARGE DISTRIBUTION GENERATED, 
- PLEASE SEE sl_test.pdb FILE. 
+ PLEASE SEE chrg.pdb FILE. 
  
  
 ------------------------------------------------------------------ 
@@ -105,12 +105,12 @@
  of "P" and "N" respectively. 
  
  
- THE GAUSSIAN EXTERNAL CHARGE OF TWO SPIRAL LINES IS SHOWN IN sl_test.txt 
- THE PDB FILE FOR THE SPIRAL LINE IS sl_test.pdb 
+ THE GAUSSIAN EXTERNAL CHARGE OF TWO SPIRAL LINES IS SHOWN IN chrg.txt 
+ THE PDB FILE FOR THE SPIRAL LINE IS chrg.pdb 
  
  
  THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. 
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2020-08-11 17:48:40                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-07 12:13:03                                                                

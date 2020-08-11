@@ -1,0 +1,8 @@
+source leaprc.ff99SB 
+lib = loadoff chrg.lib 
+check lib 
+frcmod = loadamberparams chrg.frcmod 
+SCPC = loadpdb chrg.pdb 
+saveamberparm SCPC chrg.prmtop chrg.inpcrd 
+savepdb SCPC chrg_amber.pdb 
+quit 

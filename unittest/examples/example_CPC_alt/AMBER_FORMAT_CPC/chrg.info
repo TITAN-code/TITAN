@@ -1,7 +1,7 @@
                                                                 
   ****************************************************************** 
   *                                                                * 
-  *                    TITAN - VERSION 2.0                         * 
+  *                    TITAN - VERSION 1.3                         * 
   *                                                                * 
   *           FROM THE HEBREW UNIVERSITY OF JERUSALEM              * 
   *    THIJS STUYVER, JING HUANG, DIBYENDU MALLICK, SASON SHAIK    * 
@@ -14,26 +14,40 @@
  
 ------------------------------------------------------------------ 
  
-          UNIFORM EXTERNAL ELECTRIC FIELD GENERATION 
+          UNIFORM EXTERNAL ELECTRIC FIELD GENERATION
  
 ------------------------------------------------------------------- 
  
  
  THE UNIFORM EEF IS GENERATED IN AMBER FORMAT. 
  
- THE UNIT OF LENGTH IS ANGSTROM
+ 
+------------------------------------------------------------------ 
+                          P/N-POINT1-POINT2 ANGLE 
+------------------------------------------------------------------ 
+ 
+ 
+   SET P -> THE CENTRE OF CIRCLE PLATE WITH POSITIVE CHARGES 
+   SET N -> THE CENTRE OF CIRCLE PLATE WITH NEGATIVE CHARGES 
+ 
+   P-POINT1-POINT2 ANGLES :    180.00 DEGREE
+   N-POINT1-POINT2 ANGLES :      0.00 DEGREE
+ 
+   PLEASE CHECK WHETHER THE PLATES ARE ALIGNED WITH THE VECTOR 
+ 
  
  
 ------------------------------------------------------------------ 
-                       CHARGE IN EACH PARTICLE 
-------------------------------------------------------------------  
+                       CHARGE IN EACH PARTCLE
+------------------------------------------------------------------ 
  
- IN ORDER FOR THE FIELD TO BE   0.002500 A.U., THE CHARGE SHOULD BE   0.0100 e. 
+ 
+ IN ORDER FOR THE FIELD TO BE   0.002500 A.U., THE CHARGE SHOULD BE   0.0100 e.
  
  
  
 ------------------------------------------------------------------ 
-                TOPOLOGY AND PARAMETER FOR CHARGES 
+                TOPOLOGY AND PARAMETER FOR CHARGES
 ------------------------------------------------------------------ 
  
  
@@ -42,14 +56,14 @@
  
  
 ------------------------------------------------------------------ 
-                         PDB in AMBER FORMAT 
+                         PDB in AMBER FORMAT
 ------------------------------------------------------------------ 
  
- USE THE COMMAND in "AMBER_FORMAT/" FOLDER: 
+ USE THE COMMAND in "AMBER_FORMAT/" FOLDER:
  
       tleap -s -f leap.in 
  
- THE PDB FILE OF EEF IS "chrg_amber.pdb". 
+ THE PDB FILE OF EEF IS "chrg_amber.pdb".
  
  
  
@@ -57,19 +71,20 @@
                               SUMMARY: 
 ------------------------------------------------------------------ 
  
-   The plates have been aligned with the defined vector (POINT1 -> POINT2) 
+   The plates have been aligned with the defined vector (POINT1 -> POINT2)
  and positioned  46.8279 Angstrom from POINT1. The two 
  plates contain   7084 point charges, each with an 
  absolute magnitude of   0.0100 e per point. These parameters 
- are the settings of the charged plates with  92.4000 Angstrom 
- radius 
+ are the settings of the charged plates with  92.4000 Angstrom
+ radius
  
  
- THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS        chrg.pdb 
+ THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS        chrg.pdb
  
  
- THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. 
+ THE ELECTRIC FIELD HAS BEEN SUCCESFULLY GENERATED. 
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2020-08-11 17:48:39                                                                
+NORMAL TERMINATION OF TITAN AT 2020-02-12 17:44:29
+                                                                

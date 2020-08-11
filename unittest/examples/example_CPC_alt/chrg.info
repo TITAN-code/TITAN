@@ -19,7 +19,7 @@
 ------------------------------------------------------------------- 
  
  
- THE UNIFORM EEF IS GENERATED IN GAUSSIAN FORMAT. 
+ THE UNIFORM EEF IS GENERATED IN AMBER FORMAT. 
  
  THE UNIT OF LENGTH IS BOHR
  
@@ -30,6 +30,26 @@
  
  IN ORDER FOR THE FIELD TO BE   0.002500 A.U., THE CHARGE SHOULD BE   0.0028 e. 
  
+ 
+ 
+------------------------------------------------------------------ 
+                TOPOLOGY AND PARAMETER FOR CHARGES 
+------------------------------------------------------------------ 
+ 
+ 
+ SEE "chrg.lib" IN "AMBER_FORMAT/" FOLDER 
+ SEE "chrg.frcmod" IN "AMBER_FORMAT/" FOLDER 
+ 
+ 
+------------------------------------------------------------------ 
+                         PDB in AMBER FORMAT 
+------------------------------------------------------------------ 
+ 
+ USE THE COMMAND in "AMBER_FORMAT/" FOLDER: 
+ 
+      tleap -s -f leap.in 
+ 
+ THE PDB FILE OF EEF IS "chrg_amber.pdb". 
  
  
  
@@ -45,11 +65,11 @@
  radius 
  
  
- THE TXT FILE OF TWO PARALLEL CIRCULAR PLATES IS        test.txt 
+ THE PDB FILE OF TWO PARALLEL CIRCULAR PLATES IS        chrg.pdb 
  
  
  THE ELECTRIC FIELD HAS BEEN SUCCESSFULLY GENERATED. 
  
 ****************************************************************** 
                                                                 
-NORMAL TERMINATION OF TITAN AT 2020-08-11 17:48:39                                                                
+NORMAL TERMINATION OF TITAN AT 2020-05-07 12:09:30                                                                

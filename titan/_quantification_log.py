@@ -181,7 +181,10 @@ class QuantificationLog(_Quantification):
             if 'Summary of Natural Population Analysis:' in line:
                 start_list.append(counter + 5)
             elif '   Atom  No          Natural Electron Configuration' in line:
-                end_list.append(counter - 12)
+                if "   Effective Core  " in line_list[counter-8]:
+                    end_list.append(counter - 13)
+                else:
+                    end_list.append(counter - 12)
             else:
                 pass
 
